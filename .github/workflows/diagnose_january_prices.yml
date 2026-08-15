@@ -1,0 +1,35 @@
+name: Diagnose January Prices
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Diagnose January 2-person prices
+        env:
+          RAKUTEN_APP_ID_V2: ${{ secrets.RAKUTEN_APP_ID_V2 }}
+          RAKUTEN_ACCESS_KEY_V2: ${{ secrets.RAKUTEN_ACCESS_KEY_V2 }}
+          RAKUTEN_HTTP_REFERER: https://mizutanigrandee.github.io/
+          RAKUTEN_HTTP_ORIGIN: https://mizutanigrandee.github.io
+        run: python tools/diagnose_january_prices.py
+
+      - name: Upload diagnosis result
+        uses: actions/upload-artifact@v4
+        with:
+          name: january-price-diagnosis
+          path: january_price_diagnosis.json
+          if-no-files-found: error
