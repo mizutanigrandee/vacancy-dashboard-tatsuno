@@ -99,6 +99,76 @@ async function loadAll() {
     const archive1p = await loadJson(MODE_CONFIG["1p"].ARCHIVE_PATH);
     demandBase1pData = { ...archive1p, ...demand1p };
   }
+
+  updateMarketMeta();
+}
+
+function updateMarketMeta() {
+  const countEl = document.getElementById("market-count");
+  const noteEl = document.getElementById("market-note");
+  const summaryEl = document.getElementById("market-summary");
+
+  if (countEl) countEl.textContent = `追跡市場 ${marketHotelCount}施設`;
+  if (noteEl && marketMasterData.uiNote) noteEl.textContent = marketMasterData.uiNote;
+  if (summaryEl) {
+    summaryEl.textContent = marketMasterData.summary || `有効追跡施設 ${marketHotelCount}施設`;
+  }
+}
+
+function median(values) {
+  const nums = values.filter(Number.isFinite).sort((a,b) => a-b);
+  if (!nums.length) return null;
+  const mid = Math.floor(nums.length / 2);
+  return nums.length % 2 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+}
+
+// 需要シンボル：同じ曜日の近接日（±6週間）と比較して、
+// 「販売施設数が明確に少ない」かつ「平均価格が明確に高い」日のみ点灯。
+// 市場施設数そのものには依存しないため、追跡施設を増減しても基準が崩れにくい。
+function getRelativeDemandLevel(dateStr) {
+  const cur = getDemandBaseData(dateStr);
+  const curVac = Number(cur.vacancy);
+  const curPrice = Number(cur.avg_price);
+  if (!(curVac > 0) || !(curPrice > 0)) return 0;
+
+  const target = new Date(`${dateStr}T00:00:00`);
+  if (Number.isNaN(target.getTime())) return 0;
+  const targetDow = target.getDay();
+  const WINDOW_DAYS = 42;
+  const vacPeers = [];
+  const pricePeers = [];
+
+  for (const [iso, rec] of Object.entries(demandBase1pData || {})) {
+    if (iso === dateStr) continue;
+    const d = new Date(`${iso}T00:00:00`);
+    if (Number.isNaN(d.getTime()) || d.getDay() !== targetDow) continue;
+    const diffDays = Math.abs((d - target) / 86400000);
+    if (diffDays > WINDOW_DAYS) continue;
+
+    const v = Number(rec?.vacancy);
+    const p = Number(rec?.avg_price);
+    if (v > 0 && p > 0) {
+      vacPeers.push(v);
+      pricePeers.push(p);
+    }
+  }
+
+  // 同曜日の比較対象が4日未満なら、判定材料不足として点灯しない。
+  if (vacPeers.length < 4 || pricePeers.length < 4) return 0;
+
+  const baseVac = median(vacPeers);
+  const basePrice = median(pricePeers);
+  if (!(baseVac > 0) || !(basePrice > 0)) return 0;
+
+  const scarcity = (baseVac - curVac) / baseVac;
+  const premium = (curPrice - basePrice) / basePrice;
+
+  if (scarcity >= 0.65 && premium >= 0.60) return 5;
+  if (scarcity >= 0.55 && premium >= 0.45) return 4;
+  if (scarcity >= 0.45 && premium >= 0.35) return 3;
+  if (scarcity >= 0.35 && premium >= 0.25) return 2;
+  if (scarcity >= 0.25 && premium >= 0.15) return 1;
+  return 0;
 }
 
 // ========== 1名/2名 タブ（DOMへ自動挿入） ==========
@@ -364,18 +434,8 @@ function renderMonth(y,m) {
     // 括弧付き差分テキスト
     const dvText = dv > 0 ? `(+${dv})` : dv < 0 ? `(${dv})` : `(±0)`;
 
-    // 需要シンボル（常に1名基準）。24施設前後でも使えるよう「空室施設率」で判定。
-    const base = getDemandBaseData(iso);
-    let lvl = 0;
-    if (base.vacancy != null && base.avg_price != null && marketHotelCount > 0){
-      const vacancyRate = Number(base.vacancy) / marketHotelCount;
-      const avgPrice = Number(base.avg_price);
-      if (vacancyRate <= 0.20 || avgPrice >= 30000) lvl=5;
-      else if (vacancyRate <= 0.30 || avgPrice >= 26000) lvl=4;
-      else if (vacancyRate <= 0.40 || avgPrice >= 22000) lvl=3;
-      else if (vacancyRate <= 0.55 || avgPrice >= 18000) lvl=2;
-      else if (vacancyRate <= 0.70 || avgPrice >= 15000) lvl=1;
-    }
+    // 需要シンボル（常に1名基準）。同曜日・近接日の通常水準との相対比較で判定。
+    const lvl = getRelativeDemandLevel(iso);
     const badge = lvl ? `<div class="cell-demand-badge lv${lvl}">🔥${lvl}</div>` : "";
 
     // イベント

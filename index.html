@@ -178,8 +178,8 @@
 
   <div class="market-heading">
     <h1>たつの・相生 空室＆平均価格カレンダー</h1>
-    <span class="market-count">固定市場 24施設</span>
-    <div class="market-note">楽天トラベル「姫路・相生・赤穂」登録施設のうち、住所が「たつの市」「相生市」の施設を固定抽出して追跡します。</div>
+    <span id="market-count" class="market-count">追跡市場 —施設</span>
+    <div id="market-note" class="market-note">新舞子を中心に、西播磨〜瀬戸内沿岸の宿泊市場を追跡します。</div>
   </div>
 
   <!-- 需要急騰日履歴バナー -->
@@ -212,8 +212,8 @@
         <div class="footnote-body">
           <div class="footnote-left">
             <div class="footnote-section">
-              <p>市場対象は、楽天トラベル「姫路・相生・赤穂」登録施設から抽出した <span class="footnote-strong">たつの市19施設＋相生市5施設＝24施設</span> です。</p>
-              <p>在庫数は、その24施設のうち指定日に楽天トラベルで販売中の <span class="footnote-strong">空室あり施設数</span> を表示します。</p>
+              <p>市場対象は、楽天トラベル「姫路・相生・赤穂」登録施設から抽出した <span id="market-summary" class="footnote-strong">追跡市場</span> です。</p>
+              <p>在庫数は、追跡施設のうち指定日に楽天トラベルで販売中の <span class="footnote-strong">空室あり施設数</span> を表示します。普段から全施設が常時販売しているわけではないため、🔥判定では追跡総数そのものを基準にしません。</p>
               <p>平均価格は、空室が取得できた各施設の <span class="footnote-strong">1名1室 or 2名1室の当日最安価格</span> を取り出し、その単純平均を表示します。</p>
             </div>
 
@@ -231,16 +231,16 @@
             <div class="footnote-section">
               <h4>需要シンボル基準（初期設定）</h4>
               <div class="demand-guide">
-                <span>🔥1：空室施設率 ≤70% または 平均価格 ≥15,000円</span>
-                <span>🔥2：空室施設率 ≤55% または 平均価格 ≥18,000円</span>
-                <span>🔥3：空室施設率 ≤40% または 平均価格 ≥22,000円</span>
-                <span>🔥4：空室施設率 ≤30% または 平均価格 ≥26,000円</span>
-                <span>🔥5：空室施設率 ≤20% または 平均価格 ≥30,000円</span>
+                <span>🔥1：同曜日通常比　在庫25%以上減 ＋ 価格15%以上高</span>
+                <span>🔥2：同曜日通常比　在庫35%以上減 ＋ 価格25%以上高</span>
+                <span>🔥3：同曜日通常比　在庫45%以上減 ＋ 価格35%以上高</span>
+                <span>🔥4：同曜日通常比　在庫55%以上減 ＋ 価格45%以上高</span>
+                <span>🔥5：同曜日通常比　在庫65%以上減 ＋ 価格60%以上高</span>
               </div>
             </div>
 
             <div class="footnote-section">
-              <p>🔥マークは <span class="footnote-strong">常に1名平均の在庫・価格</span> を基準に判定します（2名平均表示中も同じです）。需要基準は運用データ蓄積後に調整可能です。</p>
+              <p>🔥マークは <span class="footnote-strong">常に1名平均</span> を使い、対象日と同じ曜日の前後6週間の中央値を「通常水準」として、在庫減少と価格上昇が同時に大きい場合だけ表示します。比較対象が4日未満のときは点灯しません。</p>
             </div>
           </div>
         </div>

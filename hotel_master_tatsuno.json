@@ -1,180 +1,402 @@
 {
-  "marketName": "たつの・相生",
-  "description": "楽天トラベル『姫路・相生・赤穂』大エリアから、住所が『たつの市』『相生市』の施設を抽出した固定市場マスタ。",
+  "marketName": "西播磨・瀬戸内沿岸（たつの中心）",
+  "description": "新舞子・御津・室津を中心に、たつの市・相生市の既存追跡施設へ赤穂御崎・赤穂沿岸・家島/坊勢のレジャー宿を追加した広域市場マスタ。",
   "sourceArea": {
     "largeClassCode": "japan",
     "middleClassCode": "hyogo",
     "smallClassCode": "nannansei"
   },
-  "hotelCount": 24,
+  "hotelCount": 43,
   "hotels": [
     {
       "hotelNo": "8111",
       "hotelName": "かもめ＜新舞子＞",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1657-1",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "68133",
       "hotelName": "たつの市国民宿舎志んぐ荘",
       "city": "たつの市",
       "address": "兵庫県たつの市新宮町新宮1093",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "8705",
       "hotelName": "シーサイドみゆき",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町新舞子東海岸",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "158704",
       "hotelName": "ファミリーロッジ旅籠屋・たつの店",
       "city": "たつの市",
       "address": "兵庫県たつの市龍野町堂本228-1",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "189497",
       "hotelName": "ポパイテンキャンプ場　たつの店　＾",
       "city": "たつの市",
       "address": "兵庫県たつの市新宮町下莇原76　ポパイテンキャンプ場　たつの店",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "149159",
       "hotelName": "リブマックスリゾート瀬戸内シーフロント",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町室津895-28",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "106138",
       "hotelName": "中村屋　＜兵庫県＞",
       "city": "たつの市",
       "address": "兵庫県たつの市揖保川町黍田55-3",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "171542",
       "hotelName": "大阪屋　ａｏ　＾",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1657-24　大阪屋　ａｏ",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "8610",
       "hotelName": "懐石宿　潮里",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1404",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "158525",
       "hotelName": "新舞子ガーデンホテル",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1710",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "190409",
       "hotelName": "新舞子ａｏ　＾",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1657-1-6　新舞子ａｏ",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "68075",
       "hotelName": "片しぼ竹の宿　梅玉",
       "city": "たつの市",
       "address": "兵庫県たつの市龍野町本町1",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "142660",
       "hotelName": "舞子館",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1657-1",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "187886",
       "hotelName": "龍野城下町　町家Ｖｉｌｌａ　Ｋｕｒａｓｕ",
       "city": "たつの市",
       "address": "兵庫県たつの市龍野町川原町148",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "192654",
       "hotelName": "ＡＳＴＥＲＩＳＫ＋",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1842-14ＡＳＴＥＲＩＳＫ＋",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "197088",
       "hotelName": "ＨＯＴＥＬ　ＩＳＬＥＴ　ＳＥＴＯＵＣＨＩ",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町室津896-95",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "178352",
       "hotelName": "ＰＥＲＣＨ　ＧＵＥＳＴ　ＨＯＵＳＥ",
       "city": "たつの市",
       "address": "兵庫県たつの市龍野町川原町218-1",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "181070",
       "hotelName": "Ｔａｂｉｓｔ　二葉旅館　たつの",
       "city": "たつの市",
       "address": "兵庫県たつの市龍野町川原町190-2",
-      "enabled": true
+      "enabled": true,
+      "zone": "たつの市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "196535",
       "hotelName": "ｗａｄｒｅｓｏｒｔ千鳥亭",
       "city": "たつの市",
       "address": "兵庫県たつの市御津町黒崎1414-1",
-      "enabled": true
+      "enabled": true,
+      "zone": "新舞子・御津・室津",
+      "segment": "core_coastal"
     },
     {
       "hotelNo": "70214",
       "hotelName": "東横ＩＮＮ相生駅新幹線口",
       "city": "相生市",
       "address": "兵庫県相生市本郷町2-17",
-      "enabled": true
+      "enabled": true,
+      "zone": "相生市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "20105",
       "hotelName": "相生ステーションホテル",
       "city": "相生市",
       "address": "兵庫県相生市本郷町1-5",
-      "enabled": true
+      "enabled": true,
+      "zone": "相生市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "53413",
       "hotelName": "相生ステーションホテル　アネックス",
       "city": "相生市",
       "address": "兵庫県相生市本郷町5-3",
-      "enabled": true
+      "enabled": true,
+      "zone": "相生市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "147531",
       "hotelName": "羅漢の里",
       "city": "相生市",
       "address": "兵庫県相生市矢野町瓜生羅漢口28",
-      "enabled": true
+      "enabled": true,
+      "zone": "相生市内",
+      "segment": "regional"
     },
     {
       "hotelNo": "56745",
       "hotelName": "ＨＯＴＥＬ万葉岬",
       "city": "相生市",
       "address": "兵庫県相生市相生金ケ崎5321",
+      "enabled": true,
+      "zone": "相生・万葉岬",
+      "segment": "coastal_leisure"
+    },
+    {
+      "hotelNo": "43731",
+      "hotelName": "亀の井ホテル　赤穂",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎883-1",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "19403",
+      "hotelName": "赤穂温泉　絶景露天風呂の宿　銀波荘",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎2-8",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "19404",
+      "hotelName": "赤穂温泉　潮彩きらら　祥吉",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎2-8",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "184019",
+      "hotelName": "Ｄｏｔ　Ｇｌａｍｐｉｎｇ　赤穂",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎143-1",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "823",
+      "hotelName": "赤穂温泉　赤穂パークホテル",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市さつき町36-12",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "147688",
+      "hotelName": "赤穂温泉　料理旅館　呑海楼",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎131",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "163030",
+      "hotelName": "瀬戸内の小さなホテル　ミサキテラス",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎165-10",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "18924",
+      "hotelName": "赤穂温泉　割烹旅館　鹿久居荘　赤穂店",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市さつき町35-5",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "176741",
+      "hotelName": "加里屋旅館Ｑ（Ｋａｒｉｙａ　Ｒｙｏｋａｎ　Ｑ）",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市加里屋1996",
+      "zone": "赤穂市・観光宿",
+      "segment": "leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "28928",
+      "hotelName": "いこいの宿　赤穂ハイツ",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市尾崎向山2470-64",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "192070",
+      "hotelName": "Ｈｏｔｅｌ　ＣＡＳＡ　ＶＩＣＯ",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎2-1",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "premium_coastal",
+      "enabled": true
+    },
+    {
+      "hotelNo": "170346",
+      "hotelName": "１日１組限定　海辺の築７０年古民家／民泊",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市御崎345　海辺の築70年古民家",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "177589",
+      "hotelName": "ザ　グラン　リゾート赤穂",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市尾崎2298",
+      "zone": "赤穂御崎・沿岸",
+      "segment": "coastal_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "184007",
+      "hotelName": "民宿レストラン　初音",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市新田599-1",
+      "zone": "赤穂市・周辺",
+      "segment": "regional_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "178501",
+      "hotelName": "民宿　三田亭別館",
+      "city": "赤穂市",
+      "address": "兵庫県赤穂市朝日町11-18",
+      "zone": "赤穂市・周辺",
+      "segment": "regional_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "49345",
+      "hotelName": "割烹旅館　志みず",
+      "city": "姫路市",
+      "address": "兵庫県姫路市家島町宮85",
+      "zone": "家島・坊勢",
+      "segment": "island_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "41448",
+      "hotelName": "アイランドハウス　いえしま荘",
+      "city": "姫路市",
+      "address": "兵庫県姫路市家島町真浦1533-30",
+      "zone": "家島・坊勢",
+      "segment": "island_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "185865",
+      "hotelName": "家島ハレテラス　＾",
+      "city": "姫路市",
+      "address": "兵庫県姫路市家島町真浦522-56　Ｉｅ　Ｓｈｉｍａ　Ｔｅｒｒａｃｅ",
+      "zone": "家島・坊勢",
+      "segment": "island_leisure",
+      "enabled": true
+    },
+    {
+      "hotelNo": "111250",
+      "hotelName": "みなと旅館　＜兵庫県＞",
+      "city": "姫路市",
+      "address": "兵庫県姫路市家島町坊勢693-24",
+      "zone": "家島・坊勢",
+      "segment": "island_leisure",
       "enabled": true
     }
-  ]
+  ],
+  "marketVersion": 2,
+  "uiNote": "新舞子を中心に、たつの・相生・赤穂御崎・家島/坊勢まで、西播磨〜瀬戸内沿岸の宿泊市場を広く追跡します。",
+  "summary": "たつの市19施設＋相生市5施設＋赤穂市15施設＋家島/坊勢4施設＝43施設"
 }

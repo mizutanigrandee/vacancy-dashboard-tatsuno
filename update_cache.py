@@ -12,7 +12,7 @@ update_cache.py — たつの・相生版
   共通: demand_spike_history.json / last_updated.json
 
 重要:
-- 市場は「たつの市 + 相生市」の固定施設群。自社比較は行わない。
+- 市場は `hotel_master_tatsuno.json` の enabled=true 施設群。自社比較は行わない。
 - 楽天APIの hotelNo は1リクエスト最大15施設なので、マスタを15件ずつ分割して取得する。
 - どれか1バッチでも取得失敗した日は部分値を採用せず、0/0扱いとして既存値を保持する。
 - 『平均価格』は、空室が取得できた各施設の当日最安値の単純平均。
@@ -176,7 +176,7 @@ def _is_date_string(value: str) -> bool:
 # ============================================================
 # Market master
 # ============================================================
-def load_market_hotel_numbers() -> list[str]:
+def load_market_master() -> tuple[dict, list[str]]:
     master = _load_json_file(MARKET_MASTER_FILE)
     hotels = master.get("hotels") or []
 
@@ -203,11 +203,11 @@ def load_market_hotel_numbers() -> list[str]:
         )
 
     print(
-        f"🏨 market master: {master.get('marketName', 'たつの・相生')} "
-        f"/ {len(hotel_nos)} facilities",
+        f"🏨 market master: {master.get('marketName', 'たつの中心・西播磨沿岸')} "
+        f"/ {len(hotel_nos)} facilities / version={master.get('marketVersion', 1)}",
         file=sys.stderr,
     )
-    return hotel_nos
+    return master, hotel_nos
 
 
 def chunked(values: list[str], size: int):
@@ -215,8 +215,19 @@ def chunked(values: list[str], size: int):
         yield values[i : i + size]
 
 
-MARKET_HOTEL_NOS = load_market_hotel_numbers()
+MARKET_MASTER_DATA, MARKET_HOTEL_NOS = load_market_master()
 MARKET_BATCHES = list(chunked(MARKET_HOTEL_NOS, HOTEL_BATCH_SIZE))
+MARKET_VERSION = int(MARKET_MASTER_DATA.get("marketVersion", 1) or 1)
+MARKET_NAME = MARKET_MASTER_DATA.get("marketName", "たつの中心・西播磨沿岸")
+
+# 市場マスタを変更した初回巡回は、施設追加/削除による見かけ上の差分を0扱いにする。
+_previous_update_meta = _load_json_file(LAST_UPDATED_FILE)
+BASELINE_RESET = int(_previous_update_meta.get("market_version", 0) or 0) != MARKET_VERSION
+if BASELINE_RESET:
+    print(
+        f"🔄 market version changed: {_previous_update_meta.get('market_version')} -> {MARKET_VERSION}; diff baseline reset",
+        file=sys.stderr,
+    )
 
 # ============================================================
 # Response parser
@@ -245,7 +256,7 @@ def _extract_hotel_min_price(hotel_obj):
 # ============================================================
 def fetch_market_avg(date: dt.date, adult_num: int) -> dict:
     """
-    固定24施設（enabledのみ）を15件単位で検索し、
+    市場マスタの enabled 施設を15件単位で検索し、
     空室あり施設数と各施設最安値の平均を返す。
 
     1バッチでもAPI取得に失敗した場合は部分値を返さず、
@@ -392,7 +403,7 @@ def update_cache_mode(
                     )
                     continue
 
-                previous = old_cache.get(iso, {})
+                previous = {} if BASELINE_RESET else old_cache.get(iso, {})
                 last_vacancy = previous.get("vacancy", market["vacancy"])
                 last_avg_price = previous.get("avg_price", market["avg_price"])
 
@@ -555,7 +566,8 @@ def write_last_updated():
         "last_updated_jst": now.strftime("%Y-%m-%d %H:%M:%S JST"),
         "source": "github-actions",
         "git_sha": os.environ.get("GITHUB_SHA", "")[:7],
-        "market": "たつの・相生",
+        "market": MARKET_NAME,
+        "market_version": MARKET_VERSION,
         "market_hotel_count": len(MARKET_HOTEL_NOS),
         "note": "vacancy/price crawl finished",
     }
@@ -571,7 +583,7 @@ def write_last_updated():
 # Entrypoint
 # ============================================================
 if __name__ == "__main__":
-    print("📡 update_cache.py start (Tatsuno/Aioi)", file=sys.stderr)
+    print(f"📡 update_cache.py start ({MARKET_NAME})", file=sys.stderr)
 
     cache_1p = update_cache_mode(
         start_date=dt.date.today(),
