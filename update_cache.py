@@ -7,9 +7,11 @@ update_cache.py — たつの・相生版
 「空室あり施設数」と「各施設の当日最安値の平均」を取得する。
 
 出力:
-  1名: vacancy_price_cache.json / historical_data.json / finalized_daily_data.json
   2名: vacancy_price_cache_2p.json / historical_data_2p.json / finalized_daily_data_2p.json
   共通: demand_spike_history.json / last_updated.json
+
+たつの版は旅館・リゾート中心で1名販売を行わない施設が多いため、
+2026-08-15以降は2名1室を標準指標として運用する。
 
 重要:
 - 市場は `hotel_master_tatsuno.json` の enabled=true 施設群。自社比較は行わない。
@@ -67,10 +69,6 @@ print("🧩 Rakuten API mode: V2", file=sys.stderr)
 MARKET_MASTER_FILE = "hotel_master_tatsuno.json"
 HOTEL_BATCH_SIZE = 15  # 楽天公式仕様上の hotelNo 最大指定数
 
-CACHE_FILE_1P = "vacancy_price_cache.json"
-PREV_CACHE_FILE_1P = "vacancy_price_cache_previous.json"
-HISTORICAL_FILE_1P = "historical_data.json"
-
 CACHE_FILE_2P = "vacancy_price_cache_2p.json"
 PREV_CACHE_FILE_2P = "vacancy_price_cache_2p_previous.json"
 HISTORICAL_FILE_2P = "historical_data_2p.json"
@@ -78,7 +76,6 @@ HISTORICAL_FILE_2P = "historical_data_2p.json"
 SPIKE_HISTORY_FILE = "demand_spike_history.json"
 LAST_UPDATED_FILE = "last_updated.json"
 
-FINAL_ARCHIVE_FILE_1P = "finalized_daily_data.json"
 FINAL_ARCHIVE_FILE_2P = "finalized_daily_data_2p.json"
 
 # ============================================================
@@ -352,7 +349,7 @@ def archive_finalized_past_data(cache: dict, archive_file: str, today: dt.date):
 
 
 # ============================================================
-# Cache update (1p / 2p)
+# Cache update (2p)
 # ============================================================
 def update_cache_mode(
     start_date: dt.date,
@@ -463,7 +460,7 @@ def update_history_mode(cache: dict, historical_file: str):
 
 
 # ============================================================
-# Demand spike detection (always 1p)
+# Demand spike detection (2p)
 # ============================================================
 def detect_demand_spikes(cache_data, price_up_pct=0.05, vac_down_pct=0.05):
     today = dt.date.today()
@@ -583,25 +580,9 @@ def write_last_updated():
 # Entrypoint
 # ============================================================
 if __name__ == "__main__":
-    print(f"📡 update_cache.py start ({MARKET_NAME})", file=sys.stderr)
+    print(f"📡 update_cache.py start ({MARKET_NAME} / 2名基準)", file=sys.stderr)
 
-    cache_1p = update_cache_mode(
-        start_date=dt.date.today(),
-        months=9,
-        adult_num=1,
-        cache_file=CACHE_FILE_1P,
-        prev_file=PREV_CACHE_FILE_1P,
-        final_archive_file=FINAL_ARCHIVE_FILE_1P,
-    )
-    update_history_mode(cache_1p, HISTORICAL_FILE_1P)
-
-    demand_spikes = detect_demand_spikes(
-        cache_data=cache_1p,
-        price_up_pct=0.05,
-        vac_down_pct=0.05,
-    )
-    save_demand_spike_history(demand_spikes)
-
+    # たつの版は2名1室のみ取得。
     cache_2p = update_cache_mode(
         start_date=dt.date.today(),
         months=9,
@@ -612,5 +593,13 @@ if __name__ == "__main__":
     )
     update_history_mode(cache_2p, HISTORICAL_FILE_2P)
 
+    # 需要急騰履歴も2名データで判定。
+    demand_spikes = detect_demand_spikes(
+        cache_data=cache_2p,
+        price_up_pct=0.05,
+        vac_down_pct=0.05,
+    )
+    save_demand_spike_history(demand_spikes)
+
     write_last_updated()
-    print("✨ all done", file=sys.stderr)
+    print("✨ all done (2p only)", file=sys.stderr)

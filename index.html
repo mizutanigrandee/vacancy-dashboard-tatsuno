@@ -214,7 +214,7 @@
             <div class="footnote-section">
               <p>市場対象は、楽天トラベル「姫路・相生・赤穂」登録施設から抽出した <span id="market-summary" class="footnote-strong">追跡市場</span> です。</p>
               <p>在庫数は、追跡施設のうち指定日に楽天トラベルで販売中の <span class="footnote-strong">空室あり施設数</span> を表示します。普段から全施設が常時販売しているわけではないため、🔥判定では追跡総数そのものを基準にしません。</p>
-              <p>平均価格は、空室が取得できた各施設の <span class="footnote-strong">1名1室 or 2名1室の当日最安価格</span> を取り出し、その単純平均を表示します。</p>
+              <p>平均価格は、空室が取得できた各施設の <span class="footnote-strong">2名1室の当日最安価格</span> を取り出し、その単純平均を表示します。</p>
             </div>
 
             <div class="footnote-section">
@@ -229,18 +229,18 @@
 
           <div class="footnote-right">
             <div class="footnote-section">
-              <h4>需要シンボル基準（初期設定）</h4>
+              <h4>需要シンボル基準（2名基準）</h4>
               <div class="demand-guide">
-                <span>🔥1：同曜日通常比　在庫25%以上減 ＋ 価格15%以上高</span>
-                <span>🔥2：同曜日通常比　在庫35%以上減 ＋ 価格25%以上高</span>
-                <span>🔥3：同曜日通常比　在庫45%以上減 ＋ 価格35%以上高</span>
-                <span>🔥4：同曜日通常比　在庫55%以上減 ＋ 価格45%以上高</span>
-                <span>🔥5：同曜日通常比　在庫65%以上減 ＋ 価格60%以上高</span>
+                <span>🔥1：残16施設以下 または 平均40,000円以上</span>
+                <span>🔥2：残14施設以下 または 平均45,000円以上</span>
+                <span>🔥3：残12施設以下 または 平均50,000円以上</span>
+                <span>🔥4：残10施設以下 または 平均55,000円以上</span>
+                <span>🔥5：残8施設以下 または 平均60,000円以上</span>
               </div>
             </div>
 
             <div class="footnote-section">
-              <p>🔥マークは <span class="footnote-strong">常に1名平均</span> を使い、対象日と同じ曜日の前後6週間の中央値を「通常水準」として、在庫減少と価格上昇が同時に大きい場合だけ表示します。比較対象が4日未満のときは点灯しません。</p>
+              <p>🔥マークは <span class="footnote-strong">2名1室の販売施設数と平均価格</span> を使い、残在庫または平均単価が設定基準に達した日に表示します。</p>
             </div>
           </div>
         </div>

@@ -1,41 +1,21 @@
 // ========== データ & 祝日設定 ==========
 
-// ========= モード（1名 / 2名） =========
-const MODE_CONFIG = {
-  "1p": {
-    DATA_PATH: "./vacancy_price_cache.json",
-    PREV_PATH: "./vacancy_price_cache_previous.json",
-    HIST_PATH: "./historical_data.json",
-    ARCHIVE_PATH: "./finalized_daily_data.json",
-  },
-  "2p": {
-    DATA_PATH: "./vacancy_price_cache_2p.json",
-    PREV_PATH: "./vacancy_price_cache_2p_previous.json",
-    HIST_PATH: "./historical_data_2p.json",
-    ARCHIVE_PATH: "./finalized_daily_data_2p.json",
-  }
-};
+// ========= たつの版：2名1室を標準指標として固定 =========
+// 旅館・リゾート中心の市場特性上、1名販売を行わない施設が多いため、
+// カレンダー・グラフ・需要シンボル・需要急騰履歴はすべて2名基準とする。
+const DATA_PATH = "./vacancy_price_cache_2p.json";
+const PREV_PATH = "./vacancy_price_cache_2p_previous.json";
+const HIST_PATH = "./historical_data_2p.json";
+const ARCHIVE_PATH = "./finalized_daily_data_2p.json";
 
-// 共通（モード非依存）
 const EVENT_PATH = "./event_data.json";
-const SPIKE_PATH = "./demand_spike_history.json";   // 需要急騰は1名基準
+const SPIKE_PATH = "./demand_spike_history.json";   // 需要急騰も2名基準
 const LASTUPDATED_PATH = "./last_updated.json";
 const MARKET_MASTER_PATH = "./hotel_master_tatsuno.json";
 
-// 現在モード（localStorageに保存）
-(() => {
-  const v = localStorage.getItem("avgMode");
-  if (v !== "1p" && v !== "2p") localStorage.setItem("avgMode", "1p");
-})();
-let currentMode = localStorage.getItem("avgMode") || "1p";
-
-function getModeConf() {
-  return MODE_CONFIG[currentMode] || MODE_CONFIG["1p"];
-}
 function modeLabel() {
-  return currentMode === "2p" ? "2名平均" : "1名平均";
+  return "2名平均";
 }
-
 
 // グローバル状態
 let calendarData    = {},
@@ -45,9 +25,9 @@ let calendarData    = {},
     spikeData       = {},
     finalArchiveData = {};
 let currentYM = [], selectedDate = null;
-let demandBase1pData = {}; // 🔥判定は常に1名データを使う
+let demandBase2pData = {}; // 🔥判定は2名データを使う
 let marketMasterData = {};
-let marketHotelCount = 24;
+let marketHotelCount = 42;
 
 
 // ========== 祝日判定（ローカルjs方式） ==========
@@ -65,7 +45,7 @@ function getDisplayData(dateStr) {
 }
 
 function getDemandBaseData(dateStr) {
-  return demandBase1pData[dateStr] || getDisplayData(dateStr) || {};
+  return demandBase2pData[dateStr] || getDisplayData(dateStr) || {};
 }
 
 // 汎用ロード
@@ -79,26 +59,19 @@ async function loadJson(path) {
   }
 }
 async function loadAll() {
-  const conf = getModeConf();
-  calendarData    = await loadJson(conf.DATA_PATH);
-  prevData        = await loadJson(conf.PREV_PATH);
-  eventData       = await loadJson(EVENT_PATH);
-  historicalData  = await loadJson(conf.HIST_PATH);
-  spikeData       = await loadJson(SPIKE_PATH);   // 1名基準
-  finalArchiveData = await loadJson(conf.ARCHIVE_PATH);
+  calendarData     = await loadJson(DATA_PATH);
+  prevData         = await loadJson(PREV_PATH);
+  eventData        = await loadJson(EVENT_PATH);
+  historicalData   = await loadJson(HIST_PATH);
+  spikeData        = await loadJson(SPIKE_PATH);
+  finalArchiveData = await loadJson(ARCHIVE_PATH);
   marketMasterData = await loadJson(MARKET_MASTER_PATH);
-  const enabledHotels = (marketMasterData.hotels || []).filter(h => h.enabled !== false);
-  marketHotelCount = enabledHotels.length || Number(marketMasterData.hotelCount) || 24;
 
-  // ★追加：🔥需要シンボル判定は「常に1名データ」を参照
-  // 1名モードなら calendarData + archiveData を流用、2名モードなら 1名JSONを別途ロード
-  if (currentMode === "1p") {
-    demandBase1pData = { ...finalArchiveData, ...calendarData };
-  } else {
-    const demand1p = await loadJson(MODE_CONFIG["1p"].DATA_PATH);
-    const archive1p = await loadJson(MODE_CONFIG["1p"].ARCHIVE_PATH);
-    demandBase1pData = { ...archive1p, ...demand1p };
-  }
+  const enabledHotels = (marketMasterData.hotels || []).filter(h => h.enabled !== false);
+  marketHotelCount = enabledHotels.length || Number(marketMasterData.hotelCount) || 42;
+
+  // カレンダー表示・🔥判定ともに2名データを共通利用
+  demandBase2pData = { ...finalArchiveData, ...calendarData };
 
   updateMarketMeta();
 }
@@ -115,111 +88,26 @@ function updateMarketMeta() {
   }
 }
 
-function median(values) {
-  const nums = values.filter(Number.isFinite).sort((a,b) => a-b);
-  if (!nums.length) return null;
-  const mid = Math.floor(nums.length / 2);
-  return nums.length % 2 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
-}
+// 需要シンボル：2名基準の「残在庫 OR 平均単価」絶対値判定。
+// 追跡42施設のうち、実際に楽天で販売中の施設数と2名1室平均価格で判定する。
+// 大阪版と同じ思想で、相対比較ではなく「絶対的に強い日」を目立たせる。
+function getAbsoluteDemandLevel(dateStr) {
+  const base = getDemandBaseData(dateStr);
+  const vacancy = Number(base.vacancy);
+  const avgPrice = Number(base.avg_price);
 
-// 需要シンボル：同じ曜日の近接日（±6週間）と比較して、
-// 「販売施設数が明確に少ない」かつ「平均価格が明確に高い」日のみ点灯。
-// 市場施設数そのものには依存しないため、追跡施設を増減しても基準が崩れにくい。
-function getRelativeDemandLevel(dateStr) {
-  const cur = getDemandBaseData(dateStr);
-  const curVac = Number(cur.vacancy);
-  const curPrice = Number(cur.avg_price);
-  if (!(curVac > 0) || !(curPrice > 0)) return 0;
+  if (!(vacancy > 0) || !(avgPrice > 0)) return 0;
 
-  const target = new Date(`${dateStr}T00:00:00`);
-  if (Number.isNaN(target.getTime())) return 0;
-  const targetDow = target.getDay();
-  const WINDOW_DAYS = 42;
-  const vacPeers = [];
-  const pricePeers = [];
+  if (vacancy <= 8  || avgPrice >= 60000) return 5;
+  if (vacancy <= 10 || avgPrice >= 55000) return 4;
+  if (vacancy <= 12 || avgPrice >= 50000) return 3;
+  if (vacancy <= 14 || avgPrice >= 45000) return 2;
+  if (vacancy <= 16 || avgPrice >= 40000) return 1;
 
-  for (const [iso, rec] of Object.entries(demandBase1pData || {})) {
-    if (iso === dateStr) continue;
-    const d = new Date(`${iso}T00:00:00`);
-    if (Number.isNaN(d.getTime()) || d.getDay() !== targetDow) continue;
-    const diffDays = Math.abs((d - target) / 86400000);
-    if (diffDays > WINDOW_DAYS) continue;
-
-    const v = Number(rec?.vacancy);
-    const p = Number(rec?.avg_price);
-    if (v > 0 && p > 0) {
-      vacPeers.push(v);
-      pricePeers.push(p);
-    }
-  }
-
-  // 同曜日の比較対象が4日未満なら、判定材料不足として点灯しない。
-  if (vacPeers.length < 4 || pricePeers.length < 4) return 0;
-
-  const baseVac = median(vacPeers);
-  const basePrice = median(pricePeers);
-  if (!(baseVac > 0) || !(basePrice > 0)) return 0;
-
-  const scarcity = (baseVac - curVac) / baseVac;
-  const premium = (curPrice - basePrice) / basePrice;
-
-  if (scarcity >= 0.65 && premium >= 0.60) return 5;
-  if (scarcity >= 0.55 && premium >= 0.45) return 4;
-  if (scarcity >= 0.45 && premium >= 0.35) return 3;
-  if (scarcity >= 0.35 && premium >= 0.25) return 2;
-  if (scarcity >= 0.25 && premium >= 0.15) return 1;
   return 0;
 }
 
-// ========== 1名/2名 タブ（DOMへ自動挿入） ==========
-function ensureAvgModeTabs() {
-  // すでにあるなら何もしない
-  if (document.getElementById("avg-mode-tabs")) return;
-
-  // 既存の spike-banner の直前に差し込む（ページ上部に出せる）
-  const bannerDiv = document.getElementById("spike-banner");
-  if (!bannerDiv || !bannerDiv.parentNode) return;
-
-  const wrap = document.createElement("div");
-  wrap.id = "avg-mode-tabs";
-  wrap.className = "avg-mode-tabs";
-  wrap.innerHTML = `
-    <button class="avg-tab" data-mode="1p">1名平均</button>
-    <button class="avg-tab" data-mode="2p">2名平均</button>
-  `;
-
-  bannerDiv.parentNode.insertBefore(wrap, bannerDiv);
-
-  // クリックイベント
-  wrap.querySelectorAll(".avg-tab").forEach(btn => {
-    btn.addEventListener("click", async () => {
-      const m = btn.dataset.mode;
-      if (m === currentMode) return;
-
-      currentMode = m;
-      localStorage.setItem("avgMode", currentMode);
-
-      // データ再読み込み → 再描画
-      await loadAll();
-      renderPage();
-      updateLastUpdate();
-    });
-  });
-
-  // 初期のアクティブ反映
-  updateAvgModeTabsActive();
-}
-
-function updateAvgModeTabsActive() {
-  const wrap = document.getElementById("avg-mode-tabs");
-  if (!wrap) return;
-  wrap.querySelectorAll(".avg-tab").forEach(b => {
-    b.classList.toggle("is-active", b.dataset.mode === currentMode);
-  });
-}
-
-
-
+// たつの版では1名/2名切替を廃止し、2名平均に固定する。=
 // ========== 需要スパイク履歴バナー ==========
 // サマリー：直近3日分×最大10件（※当日〜3日先は除外）
 function renderSpikeBanner() {
@@ -338,10 +226,6 @@ function renderPage() {
       '</div>';
   }
 
-  // ★ 1名/2名タブを常に表示（index.html改修なし）
-  ensureAvgModeTabs();
-  updateAvgModeTabsActive();
-
   // ① バナー
   renderSpikeBanner();
 
@@ -434,8 +318,8 @@ function renderMonth(y,m) {
     // 括弧付き差分テキスト
     const dvText = dv > 0 ? `(+${dv})` : dv < 0 ? `(${dv})` : `(±0)`;
 
-    // 需要シンボル（常に1名基準）。同曜日・近接日の通常水準との相対比較で判定。
-    const lvl = getRelativeDemandLevel(iso);
+    // 需要シンボル（2名基準）。残在庫または平均単価の絶対値で判定。
+    const lvl = getAbsoluteDemandLevel(iso);
     const badge = lvl ? `<div class="cell-demand-badge lv${lvl}">🔥${lvl}</div>` : "";
 
     // イベント
