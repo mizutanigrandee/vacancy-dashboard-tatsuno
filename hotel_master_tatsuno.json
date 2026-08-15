@@ -1,12 +1,12 @@
 {
   "marketName": "西播磨・瀬戸内沿岸（たつの中心）",
-  "description": "新舞子・御津・室津を中心に、たつの市・相生市の既存追跡施設へ赤穂御崎・赤穂沿岸・家島/坊勢のレジャー宿を追加した広域市場マスタ。",
+  "description": "新舞子・御津・室津を中心に、たつの市・相生市の既存追跡施設へ赤穂御崎・赤穂沿岸・家島/坊勢のレジャー宿を追加した広域市場マスタ。赤穂パークホテルは価格比較上の参考性が低く、2027年1月以降に異常高値も確認されたため除外。",
   "sourceArea": {
     "largeClassCode": "japan",
     "middleClassCode": "hyogo",
     "smallClassCode": "nannansei"
   },
-  "hotelCount": 43,
+  "hotelCount": 42,
   "hotels": [
     {
       "hotelNo": "8111",
@@ -261,15 +261,6 @@
       "enabled": true
     },
     {
-      "hotelNo": "823",
-      "hotelName": "赤穂温泉　赤穂パークホテル",
-      "city": "赤穂市",
-      "address": "兵庫県赤穂市さつき町36-12",
-      "zone": "赤穂御崎・沿岸",
-      "segment": "coastal_leisure",
-      "enabled": true
-    },
-    {
       "hotelNo": "147688",
       "hotelName": "赤穂温泉　料理旅館　呑海楼",
       "city": "赤穂市",
@@ -396,7 +387,7 @@
       "enabled": true
     }
   ],
-  "marketVersion": 2,
+  "marketVersion": 3,
   "uiNote": "新舞子を中心に、たつの・相生・赤穂御崎・家島/坊勢まで、西播磨〜瀬戸内沿岸の宿泊市場を広く追跡します。",
-  "summary": "たつの市19施設＋相生市5施設＋赤穂市15施設＋家島/坊勢4施設＝43施設"
+  "summary": "たつの市19施設＋相生市5施設＋赤穂市14施設＋家島/坊勢4施設＝42施設"
 }
