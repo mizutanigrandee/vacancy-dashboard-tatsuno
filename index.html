@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>めちゃいいツール | たつの・相生 空室＆平均価格カレンダー</title>
+  <link rel="icon" type="image/png" href="mechalogo.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="japanese-holidays.js"></script>
+  <link rel="stylesheet" href="assets/site.css">
+
+  <style>
+    .market-heading{
+      width:min(1200px, calc(100% - 48px));
+      margin:18px auto 4px;
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      flex-wrap:wrap;
+      color:#31445c;
+    }
+    .market-heading h1{
+      margin:0;
+      font-size:20px;
+      color:#2c4260;
+      letter-spacing:.02em;
+    }
+    .market-heading .market-count{
+      font-size:12px;
+      font-weight:700;
+      color:#537197;
+      background:#eef5fb;
+      border:1px solid #d9e8f5;
+      border-radius:999px;
+      padding:4px 9px;
+    }
+    .market-heading .market-note{
+      width:100%;
+      font-size:12px;
+      color:#6a7b90;
+      line-height:1.5;
+    }
+
+    .dashboard-footnote{
+      width:min(1200px, calc(100% - 48px));
+      margin:42px auto 56px;
+    }
+    .app-footer{ width:100%; }
+    .footnote-card{
+      width:100%;
+      background:transparent;
+      border:none;
+      border-radius:0;
+      box-shadow:none;
+      padding:0;
+      color:#31445c;
+    }
+    .footnote-head{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .footnote-head h3{
+      margin:0;
+      font-size:18px;
+      color:#2c4260;
+      letter-spacing:.02em;
+    }
+    .footnote-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:24px;
+      padding:0 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.08em;
+      color:#fff;
+      background:linear-gradient(90deg,#4d8fd6 0%,#8a6fd6 100%);
+    }
+    .footnote-body{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .footnote-left,.footnote-right{ min-width:0; }
+    .footnote-section + .footnote-section{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px dashed #d8e2ee;
+    }
+    .footnote-section p{
+      margin:0 0 8px;
+      font-size:13px;
+      line-height:1.75;
+    }
+    .footnote-section p:last-child{ margin-bottom:0; }
+    .footnote-section h4{
+      margin:0 0 8px;
+      font-size:13px;
+      color:#537197;
+    }
+    .footnote-strong{ font-weight:700; color:#35537a; }
+    .footnote-list{ margin:0; padding-left:1.2em; }
+    .footnote-list li{
+      margin:0 0 6px;
+      font-size:13px;
+      line-height:1.7;
+    }
+    .demand-guide{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+    .demand-guide span{
+      display:block;
+      font-size:12px;
+      line-height:1.5;
+      padding:9px 10px;
+      background:#f4f8fc;
+      border-radius:10px;
+      border:1px solid #e3ecf6;
+      color:#3f5878;
+      font-weight:600;
+    }
+    .mini-plus{ color:#2e7dff; font-weight:700; }
+    .mini-minus{ color:#d65a5a; font-weight:700; }
+    .mini-up{ color:#d65a5a; font-weight:700; }
+    .mini-down{ color:#2e7dff; font-weight:700; }
+    .mini-red{ color:#cc3d4a; font-weight:700; }
+    .mini-blue{ color:#3b6fd8; font-weight:700; }
+    .mini-black{ color:#666; font-weight:700; }
+
+    .graph-last-update-wrap{
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto 8px;
+    }
+    .graph-last-update{
+      max-width:520px;
+      font-size:12px;
+      color:#6a7b90;
+      line-height:1.4;
+      margin:0 0 10px 6px;
+    }
+
+    @media (max-width:768px){
+      .market-heading{
+        width:calc(100% - 24px);
+        margin:12px auto 2px;
+      }
+      .market-heading h1{ font-size:17px; }
+      .market-heading .market-note{ font-size:11px; }
+      .dashboard-footnote{
+        width:calc(100% - 24px);
+        margin:16px auto 28px;
+      }
+      .footnote-card{ padding:16px; border-radius:14px; }
+      .footnote-head h3{ font-size:16px; }
+      .footnote-body{ grid-template-columns:1fr; gap:14px; }
+      .footnote-section p,.footnote-list li,.demand-guide span{ font-size:12px; }
+      .demand-guide{ grid-template-columns:1fr; }
+      .graph-last-update-wrap{
+        width:calc(100% - 24px);
+        margin:0 auto 6px;
+      }
+      .graph-last-update{
+        margin:0 0 8px 2px;
+        font-size:11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="market-heading">
+    <h1>たつの・相生 空室＆平均価格カレンダー</h1>
+    <span class="market-count">固定市場 24施設</span>
+    <div class="market-note">楽天トラベル「姫路・相生・赤穂」登録施設のうち、住所が「たつの市」「相生市」の施設を固定抽出して追跡します。</div>
+  </div>
+
+  <!-- 需要急騰日履歴バナー -->
+  <div id="spike-banner"></div>
+
+  <!-- 月送りボタン -->
+  <div class="nav-button-container">
+    <button id="prevMonthBtn" class="custom-button"><span class="icon">⬅️</span> 前月</button>
+    <button id="currentMonthBtn" class="custom-button"><span class="icon">📅</span> 当月</button>
+    <button id="nextMonthBtn" class="custom-button"><span class="icon">➡️</span> 次月</button>
+  </div>
+
+  <div class="graph-last-update-wrap">
+    <div id="last-update" class="graph-last-update">最終更新日時：—</div>
+  </div>
+
+  <main class="calendar-main">
+    <div class="graph-side" id="graph-container"></div>
+    <div class="calendar-container" id="calendar-container"></div>
+  </main>
+
+  <footer class="app-footer">
+    <div class="dashboard-footnote">
+      <div class="footnote-card">
+        <div class="footnote-head">
+          <span class="footnote-badge">NOTE</span>
+          <h3>表示について</h3>
+        </div>
+
+        <div class="footnote-body">
+          <div class="footnote-left">
+            <div class="footnote-section">
+              <p>市場対象は、楽天トラベル「姫路・相生・赤穂」登録施設から抽出した <span class="footnote-strong">たつの市19施設＋相生市5施設＝24施設</span> です。</p>
+              <p>在庫数は、その24施設のうち指定日に楽天トラベルで販売中の <span class="footnote-strong">空室あり施設数</span> を表示します。</p>
+              <p>平均価格は、空室が取得できた各施設の <span class="footnote-strong">1名1室 or 2名1室の当日最安価格</span> を取り出し、その単純平均を表示します。</p>
+            </div>
+
+            <div class="footnote-section">
+              <h4>差分・イベントの意味</h4>
+              <ul class="footnote-list">
+                <li>空室数の <span class="mini-plus">(+N)</span> / <span class="mini-minus">(-N)</span> は、同じ宿泊日に対する前回巡回時点からの増減です。</li>
+                <li>平均価格の <span class="mini-up">↑</span> / <span class="mini-down">↓</span> は、同じ宿泊日に対する前回巡回時点からの上昇 / 下降です。</li>
+                <li>イベントアイコンは event_data.xlsx で設定します。目安：<span class="mini-red">🔴 たつの市</span> / <span class="mini-blue">🔵 相生市</span> / <span class="mini-black">★ 周辺・その他</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footnote-right">
+            <div class="footnote-section">
+              <h4>需要シンボル基準（初期設定）</h4>
+              <div class="demand-guide">
+                <span>🔥1：空室施設率 ≤70% または 平均価格 ≥15,000円</span>
+                <span>🔥2：空室施設率 ≤55% または 平均価格 ≥18,000円</span>
+                <span>🔥3：空室施設率 ≤40% または 平均価格 ≥22,000円</span>
+                <span>🔥4：空室施設率 ≤30% または 平均価格 ≥26,000円</span>
+                <span>🔥5：空室施設率 ≤20% または 平均価格 ≥30,000円</span>
+              </div>
+            </div>
+
+            <div class="footnote-section">
+              <p>🔥マークは <span class="footnote-strong">常に1名平均の在庫・価格</span> を基準に判定します（2名平均表示中も同じです）。需要基準は運用データ蓄積後に調整可能です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script defer src="assets/site-header.js" data-active="calendar"></script>
+</body>
+</html>

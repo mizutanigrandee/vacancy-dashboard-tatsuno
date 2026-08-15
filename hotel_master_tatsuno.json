@@ -1,0 +1,180 @@
+{
+  "marketName": "たつの・相生",
+  "description": "楽天トラベル『姫路・相生・赤穂』大エリアから、住所が『たつの市』『相生市』の施設を抽出した固定市場マスタ。",
+  "sourceArea": {
+    "largeClassCode": "japan",
+    "middleClassCode": "hyogo",
+    "smallClassCode": "nannansei"
+  },
+  "hotelCount": 24,
+  "hotels": [
+    {
+      "hotelNo": "8111",
+      "hotelName": "かもめ＜新舞子＞",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1657-1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "68133",
+      "hotelName": "たつの市国民宿舎志んぐ荘",
+      "city": "たつの市",
+      "address": "兵庫県たつの市新宮町新宮1093",
+      "enabled": true
+    },
+    {
+      "hotelNo": "8705",
+      "hotelName": "シーサイドみゆき",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町新舞子東海岸",
+      "enabled": true
+    },
+    {
+      "hotelNo": "158704",
+      "hotelName": "ファミリーロッジ旅籠屋・たつの店",
+      "city": "たつの市",
+      "address": "兵庫県たつの市龍野町堂本228-1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "189497",
+      "hotelName": "ポパイテンキャンプ場　たつの店　＾",
+      "city": "たつの市",
+      "address": "兵庫県たつの市新宮町下莇原76　ポパイテンキャンプ場　たつの店",
+      "enabled": true
+    },
+    {
+      "hotelNo": "149159",
+      "hotelName": "リブマックスリゾート瀬戸内シーフロント",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町室津895-28",
+      "enabled": true
+    },
+    {
+      "hotelNo": "106138",
+      "hotelName": "中村屋　＜兵庫県＞",
+      "city": "たつの市",
+      "address": "兵庫県たつの市揖保川町黍田55-3",
+      "enabled": true
+    },
+    {
+      "hotelNo": "171542",
+      "hotelName": "大阪屋　ａｏ　＾",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1657-24　大阪屋　ａｏ",
+      "enabled": true
+    },
+    {
+      "hotelNo": "8610",
+      "hotelName": "懐石宿　潮里",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1404",
+      "enabled": true
+    },
+    {
+      "hotelNo": "158525",
+      "hotelName": "新舞子ガーデンホテル",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1710",
+      "enabled": true
+    },
+    {
+      "hotelNo": "190409",
+      "hotelName": "新舞子ａｏ　＾",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1657-1-6　新舞子ａｏ",
+      "enabled": true
+    },
+    {
+      "hotelNo": "68075",
+      "hotelName": "片しぼ竹の宿　梅玉",
+      "city": "たつの市",
+      "address": "兵庫県たつの市龍野町本町1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "142660",
+      "hotelName": "舞子館",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1657-1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "187886",
+      "hotelName": "龍野城下町　町家Ｖｉｌｌａ　Ｋｕｒａｓｕ",
+      "city": "たつの市",
+      "address": "兵庫県たつの市龍野町川原町148",
+      "enabled": true
+    },
+    {
+      "hotelNo": "192654",
+      "hotelName": "ＡＳＴＥＲＩＳＫ＋",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1842-14ＡＳＴＥＲＩＳＫ＋",
+      "enabled": true
+    },
+    {
+      "hotelNo": "197088",
+      "hotelName": "ＨＯＴＥＬ　ＩＳＬＥＴ　ＳＥＴＯＵＣＨＩ",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町室津896-95",
+      "enabled": true
+    },
+    {
+      "hotelNo": "178352",
+      "hotelName": "ＰＥＲＣＨ　ＧＵＥＳＴ　ＨＯＵＳＥ",
+      "city": "たつの市",
+      "address": "兵庫県たつの市龍野町川原町218-1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "181070",
+      "hotelName": "Ｔａｂｉｓｔ　二葉旅館　たつの",
+      "city": "たつの市",
+      "address": "兵庫県たつの市龍野町川原町190-2",
+      "enabled": true
+    },
+    {
+      "hotelNo": "196535",
+      "hotelName": "ｗａｄｒｅｓｏｒｔ千鳥亭",
+      "city": "たつの市",
+      "address": "兵庫県たつの市御津町黒崎1414-1",
+      "enabled": true
+    },
+    {
+      "hotelNo": "70214",
+      "hotelName": "東横ＩＮＮ相生駅新幹線口",
+      "city": "相生市",
+      "address": "兵庫県相生市本郷町2-17",
+      "enabled": true
+    },
+    {
+      "hotelNo": "20105",
+      "hotelName": "相生ステーションホテル",
+      "city": "相生市",
+      "address": "兵庫県相生市本郷町1-5",
+      "enabled": true
+    },
+    {
+      "hotelNo": "53413",
+      "hotelName": "相生ステーションホテル　アネックス",
+      "city": "相生市",
+      "address": "兵庫県相生市本郷町5-3",
+      "enabled": true
+    },
+    {
+      "hotelNo": "147531",
+      "hotelName": "羅漢の里",
+      "city": "相生市",
+      "address": "兵庫県相生市矢野町瓜生羅漢口28",
+      "enabled": true
+    },
+    {
+      "hotelNo": "56745",
+      "hotelName": "ＨＯＴＥＬ万葉岬",
+      "city": "相生市",
+      "address": "兵庫県相生市相生金ケ崎5321",
+      "enabled": true
+    }
+  ]
+}

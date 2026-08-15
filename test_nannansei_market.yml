@@ -1,0 +1,36 @@
+name: Test Nannansei Market
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-market:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run Nannansei market test
+        env:
+          RAKUTEN_APP_ID_V2: ${{ secrets.RAKUTEN_APP_ID_V2 }}
+          RAKUTEN_ACCESS_KEY_V2: ${{ secrets.RAKUTEN_ACCESS_KEY_V2 }}
+          RAKUTEN_HTTP_REFERER: https://mizutanigrandee.github.io/
+          RAKUTEN_HTTP_ORIGIN: https://mizutanigrandee.github.io
+          TEST_STAY_DAYS_AHEAD: "30"
+        run: python tools/test_nannansei_market.py
+
+      - name: Upload test result
+        uses: actions/upload-artifact@v4
+        with:
+          name: nannansei-market-test-result
+          path: nannansei_market_test_result.json
+          if-no-files-found: error

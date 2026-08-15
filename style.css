@@ -1,0 +1,764 @@
+/* ── ヘッダー＆ロゴ調整（PC/スマホ共通） ── */
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;  /* ヘッダー全体の高さを固定 */
+  padding: 0;
+  background: linear-gradient(90deg, #2D9CDB 0%, #E743B2 100%);
+}
+
+/* ロゴ画像本体 */
+.app-banner {
+  display: block;
+  height: 32px;      /* ロゴの高さを固定 */
+  width: auto;
+  max-width: 260px;  /* 横は最大260pxまで（足りなければ増やしてOK） */
+}
+
+
+
+
+/* ── メインレイアウト ── */
+.main-flexbox {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100vw;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+/* ── 需要急騰バナー（カード/左サイド寄せ）── */
+.demand-spike-column {
+  min-width: 236px;
+  max-width: 275px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* 右寄せで隣のカレンダーと適度な間隔 */
+}
+.demand-spike-banner {
+  background: #fff8ed;
+  border: 1.6px solid #ffd799;
+  border-radius: 13px;
+  box-shadow: 0 3px 14px rgba(240, 135, 25, 0.12);
+  font-size: 0.93rem;
+  color: #cc5200;
+  padding: 13px 16px 10px 16px;
+  max-width: 270px;
+  min-width: 185px;
+  line-height: 1.35;
+  margin-bottom: 15px;
+  margin-top: 18px;
+  transition: box-shadow 0.18s;
+}
+.demand-spike-banner .banner-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.13em;
+  font-weight: 700;
+  color: #e67e22;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+.demand-spike-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 125px;
+  overflow-y: auto;
+}
+.demand-spike-item {
+  margin-bottom: 4px;
+  padding-bottom: 3px;
+  border-bottom: 0.5px dashed #ffd799;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 7px;
+  font-size: 0.99em;
+  color: #a05f00;
+}
+.demand-spike-item:last-child {
+  border-bottom: none;
+}
+.demand-spike-item .date {
+  font-weight: 700;
+  color: #f28c00;
+}
+.demand-spike-item .main {
+  flex-grow: 1;
+  color: #cc5200;
+}
+.demand-spike-item .note {
+  color: #6b4d14;
+  font-weight: 400;
+  font-size: 0.86em;
+}
+
+/* カレンダー本体 */
+.calendar-main {
+  width: 100%;
+}
+.calendar-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* --- PC版のみ：バナーの左寄せ/カレンダー幅バランス --- */
+@media (min-width: 900px) {
+  .main-flexbox {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .demand-spike-column {
+    margin-right: 9px;
+    min-width: 236px;
+    max-width: 275px;
+    padding-top: 7px;
+  }
+  .calendar-main {
+    flex-grow: 1;
+    min-width: 0;
+  }
+}
+
+/* --- スマホ：バナーは上部・幅いっぱい＆縮小 --- */
+@media (max-width: 899px) {
+  .main-flexbox {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .demand-spike-column {
+    width: 100%;
+    max-width: 99vw;
+    min-width: unset;
+    align-items: stretch;
+    margin-right: 0;
+    padding-top: 0;
+  }
+  .demand-spike-banner {
+    position: relative;
+    width: 97vw;
+    max-width: 99vw;
+    min-width: 0;
+    font-size: 0.85rem;
+    margin-top: 11px;
+    margin-bottom: 13px;
+    padding: 8px 8px 8px 10px;
+    left: unset;
+    top: unset;
+    box-shadow: 0 2px 9px rgba(240, 135, 25, 0.10);
+  }
+  .demand-spike-banner .banner-title { font-size: 0.98em; }
+}
+
+/* --- その他、カレンダー・UI・スマホ最適化は従来通り --- */
+/* ...（ここ以降は従来どおり。既存カレンダー/グラフ/ボタン/イベント/最終更新など）... */
+
+
+/* ── 月送りボタン ── */
+.nav-button-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0px;
+  min-width: 80px;
+  max-width: 220px;
+  border: 1.8px solid #b9b9c9;
+  border-radius: 10px;
+  background: #fff;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  margin: 0 10px 10px 0;
+  box-shadow: 0 1.5px 7px rgba(0,0,0,0.03);
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+.custom-button .icon {
+  font-size: 1.15em;
+  margin-right: 8px;
+  line-height: 1;
+  display: inline-block;
+}
+.custom-button:hover {
+  background: #f3f3fa;
+  border-color: #e53939;
+  color: #e53939 !important;
+}
+
+/* ── 全体レイアウト ── */
+body {
+  font-family: "Segoe UI", "Yu Gothic", "Meiryo", sans-serif;
+  background-color: #f9fbfc;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+.calendar-main { width: 100%; }
+/* ── メインレイアウト ── */
+.main-flexbox {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100vw;
+  margin: 0 auto;
+  width: 100vw;
+}
+.graph-side {
+  min-width: 340px;
+  max-width: 370px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(65,95,140,0.11);
+  margin-bottom: 12px;
+  padding: 12px;
+}
+.graph-side canvas {
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+}
+.calendar-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+/* ── 月カレンダー ── */
+.month-calendar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(65,95,140,0.09);
+  padding: 12px 6px 6px 6px;
+  min-width: 615px;
+  max-width: 650px;
+  margin-bottom: 12px;
+}
+.month-header {
+  font-size: 1.22rem;
+  font-weight: bold;
+  color: #2e6fa2;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+.calendar-dow {
+  height: 46px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #e9f0f6 !important;
+  color: #2e6fa2 !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  border-radius: 4px !important;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
+
+/* ── 日付セル（PC）── */
+.calendar-cell {
+  background: #f6f9ff;
+  border: 1px solid #e1e7ed;
+  border-radius: 7px;
+  min-height: 116px;
+  height: auto; /* ★固定高を解除：イベント件数に応じて自動拡張 */
+  padding: 9px 5px 6px 5px;
+  position: relative;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.calendar-cell.selected {
+  background: #d2edfa !important;
+  box-shadow: 0 0 0 2px #5ac8fa !important;
+}
+.sunday-bg    { background: #f7e4e4 !important; }
+.saturday-bg  { background: #e3edff !important; }
+.holiday-bg   { background: #fff3e5 !important; }
+.calendar-cell.past-date { background: #f0f0f0 !important; }
+
+/* ── 日付数字 ── */
+.cell-date {
+  font-size: 0.88rem;
+  font-weight: 700;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+}
+
+/* ── 在庫＆前日差分 ── */
+.cell-main {
+  margin-top: 25px !important;
+  margin-bottom: 2px !important;
+}
+.cell-vacancy {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.cell-vacancy-diff.plus  { color: #1976d2; font-size: 12px; margin-left: 2px; }
+.cell-vacancy-diff.minus { color: #d32f2f; font-size: 12px; margin-left: 2px; }
+.cell-vacancy-diff.flat  { color: #666;   font-size: 12px; margin-left: 2px; }
+
+/* ── 価格＆矢印 ── */
+.cell-price {
+  font-size: 0.9rem;
+  color: #222 !important;
+  font-weight: bold;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+.cell-price-diff.up   { color: #d32f2f; }
+.cell-price-diff.down { color: #1565c0; }
+.cell-price-diff.flat { color: #666;   }
+
+/* ── 需要シンボル（炎）── */
+.cell-demand-badge {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  font-size: 1.01rem;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
+}
+.cell-demand-badge.lv1 { color: #ffa600; }
+.cell-demand-badge.lv2 { color: #ff6600; }
+.cell-demand-badge.lv3 { color: #e94e77; }
+.cell-demand-badge.lv4 { color: #be0c0c; }
+.cell-demand-badge.lv5 { color: #421c16; }
+
+/* ── イベントリスト ── */
+.cell-event-list {
+  margin-top: 2px !important;
+  max-width: 98%;
+}
+/* PC版 イベント名改行対応 */
+.cell-event {
+  font-size: 11.5px !important;
+  line-height: 1.2 !important;
+  max-width: 98% !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  display: block !important;
+  overflow-wrap: break-word !important;
+  /* overflow: hidden !important; 削除 */
+  /* text-overflow: ellipsis !important; 削除 */
+  max-height: none !important; /* 最大行制限解除 */
+}
+
+.cell-event-icon {
+  color: #357ebd;
+  flex-shrink: 0;
+  font-weight: normal;
+}
+.cell-event-name {
+  color: #222 !important;
+  font-weight: 600 !important;
+  margin-left: 2px;
+}
+
+/* ── グラフボタン群 ── */
+.graph-btns {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+.graph-btns button {
+  background: #f3f7fa;
+  color: #2e6fa2;
+  border: 1px solid #b9cfdd;
+  border-radius: 5px;
+  font-size: 1.03rem;
+  padding: 5px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.graph-btns button:hover {
+  background: #d4e8f7;
+}
+
+/* ── スマホ最適化 ── */
+@media screen and (max-width: 700px) {
+  body, html {
+    overflow-x: hidden !important;
+  }
+
+  .calendar-main,
+  .main-flexbox,
+  .calendar-container {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .main-flexbox {
+    flex-direction: column !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  .graph-side {
+    min-width: auto !important;
+    max-width: 96vw !important;
+    width: 96vw !important;
+    margin-bottom: 16px !important;
+  }
+
+  .calendar-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  .month-calendar {
+    min-width: 99vw !important;
+    max-width: 99vw !important;
+    width: 99vw !important;
+    padding: 4px 1px 2px 1px !important;
+    margin: 0 0 6px 0 !important;
+    box-shadow: 0 1.5px 8px rgba(0,0,0,0.04);
+  }
+
+  .calendar-grid {
+    gap: 0px !important;
+  }
+
+  .calendar-dow {
+    font-size: 9px !important;
+    height: 18px !important;
+    line-height: 18px !important;
+    padding: 0 !important;
+    letter-spacing: 0.2px;
+  }
+
+  .calendar-cell {
+    min-height: 62px !important;
+    height: auto !important;
+    padding: 5px 2px 4px 2px !important;
+    font-size: 9.2px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .cell-main {
+    margin-top: 12px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .cell-date {
+    font-size: 8.1px !important;
+    top: 3.5px !important;
+    left: 4.5px !important;
+  }
+
+  .cell-vacancy,
+  .cell-price {
+    font-size: 7px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05px;
+    line-height: 1.05;
+  }
+
+  .cell-vacancy-diff,
+  .cell-price-diff {
+    font-size: 7px !important;
+    margin-left: 2px !important;
+  }
+
+  .cell-demand-badge {
+    font-size: 9px !important;
+    top: 5px !important;
+    right: 5px !important;
+  }
+
+  .cell-event-list {
+    margin-top: 2px !important;
+    max-width: 92% !important;
+  }
+
+  /* スマホのイベント文字サイズ */
+  .cell-event {
+    font-size: 7.5px !important;
+    line-height: 1.2 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    display: block !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* スマホ用ヘッダー＆ロゴ（帯を少し細く） */
+  .app-header {
+    height: 44px;  /* PC 52px → スマホ 44px */
+  }
+
+  .app-banner {
+    height: 32px;          /* ここを 32px にしてOK */
+    width: auto;
+    max-width: 80vw;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    padding: 6px 2vw 6px 2vw;
+    max-width: 97vw;
+  }
+
+  .spike-banner-header { font-size: 16px !important; }
+  .spike-chip { font-size: 10.6px !important; padding: 4px 4.5vw 4px 5px !important; }
+  .spike-main { font-size: 11.5px !important; }
+  .spike-date { font-size: 9px !important; }
+}
+
+
+.spike-chip {
+  background-color: #fff7e1; /* 薄いクリーム色背景 */
+  border: 1px solid #f0d49b; /* 淡いベージュ系の細枠 */
+  border-radius: 6px;
+  padding: 4px 7px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  display: inline-block;
+  color: inherit; /* 文字色は元のまま */
+  font-size: inherit; /* サイズは元のまま */
+  line-height: inherit;
+}
+.spike-chip .spike-date {
+  background-color: #f7dba7; /* 少し濃いめの背景色 */
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+  font-weight: 600;
+  color: #8c5200; /* 少し落ち着いたオレンジ系 */
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* --- イベント名（リンク）2行まで表示／それ以上は非表示 --- */
+.event-link {
+  font-size: 11px !important;
+  color: #357ebd;
+  text-decoration: underline;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  line-height: 1.25;
+  max-width: 98%;
+}
+@media (max-width: 700px) {
+  .event-link {
+    font-size: 6px !important;
+    line-height: 1.2;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+
+/* ── スマホ版ヘッダー＆ロゴ 最終調整パッチ ── */
+@media (max-width: 700px) {
+  .app-header {
+    height: 40px !important;   /* 帯そのものをかなり細くする */
+    padding: 0 !important;
+  }
+
+  .app-banner {
+    height: 24px !important;   /* ロゴも一回り小さく */
+    width: auto !important;
+    max-width: 60vw !important;
+    margin: 0 auto !important;
+    object-fit: contain;
+  }
+}
+
+/* =========================================================
+   1名平均 / 2名平均 タブ（avg-mode-tabs）
+   ※ app.js が自動挿入する #avg-mode-tabs / .avg-tab 用
+   ========================================================= */
+.avg-mode-tabs {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* 中央寄せ（スクショのイメージに寄せる） */
+  gap: 8px;
+  margin: 10px 0 6px 0;
+}
+
+.avg-mode-tabs .avg-tab {
+  appearance: none;
+  border: 1px solid #b9b9c9;
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  box-shadow: 0 1.5px 7px rgba(0,0,0,0.03);
+  transition: background 0.18s, color 0.18s, border 0.18s, transform 0.06s;
+}
+
+.avg-mode-tabs .avg-tab:hover {
+  background: #f3f3fa;
+  border-color: #e53939;
+  color: #e53939;
+}
+
+.avg-mode-tabs .avg-tab:active {
+  transform: translateY(1px);
+}
+
+.avg-mode-tabs .avg-tab.is-active {
+  background: #2D9CDB;
+  border-color: #2D9CDB;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(45,156,219,0.18);
+}
+
+.avg-mode-tabs .avg-tab:focus-visible {
+  outline: 3px solid rgba(45,156,219,0.25);
+  outline-offset: 2px;
+}
+
+/* スマホ：タブを少し小さく＆余白最適化 */
+@media (max-width: 700px) {
+  .avg-mode-tabs {
+    justify-content: flex-start; /* スマホは左寄せの方が“操作しやすい” */
+    padding: 0 8px;
+    margin: 8px 0 4px 0;
+  }
+
+  .avg-mode-tabs .avg-tab {
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 9px;
+  }
+}
+
+/* ===== 比較情報パネル ===== */
+.compare-info {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #f5f9fe;
+  border: 1px solid #dce8f5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2e6fa2;
+}
+.compare-info h4 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2e6fa2;
+}
+.compare-info .compare-row {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+.compare-info .compare-row .label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+.compare-info .diff-pos { color: #1976d2; }  /* 在庫増＝青 */
+.compare-info .diff-neg { color: #d32f2f; }  /* 在庫減＝赤 */
+.compare-info .price-pos { color: #d32f2f; } /* 価格上昇＝赤 */
+.compare-info .price-neg { color: #1565c0; } /* 価格下降＝青 */
+
+/* ===== 左パネルUI 微調整 ===== */
+.compare-info {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  line-height: 1.35;
+}
+
+.compare-info .compare-row {
+  margin-bottom: 2px;
+}
+
+.graph-side h3 {
+  margin: 8px 0 10px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #2e6fa2;
+}
+
+.graph-btns {
+  gap: 4px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.graph-btns button {
+  font-size: 0.85rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.archive-summary-box {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f8fbff;
+  border: 1px solid #dbe7f3;
+}
+
+.archive-summary-row {
+  margin-bottom: 4px;
+}
+
+.archive-summary-note {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.45;
+}
+
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 16px;
+}
+
+.chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
