@@ -1,9 +1,10 @@
 {
-  "last_updated_iso": "2026-08-15T15:01:54+09:00",
-  "last_updated_jst": "2026-08-15 15:01:54 JST",
+  "last_updated_iso": "2026-08-15T16:04:20+09:00",
+  "last_updated_jst": "2026-08-15 16:04:20 JST",
   "source": "github-actions",
-  "git_sha": "e19ff66",
-  "market": "たつの・相生",
-  "market_hotel_count": 24,
+  "git_sha": "85e061e",
+  "market": "西播磨・瀬戸内沿岸（たつの中心）",
+  "market_version": 2,
+  "market_hotel_count": 43,
   "note": "vacancy/price crawl finished"
 }
