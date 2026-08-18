@@ -50,13 +50,9 @@ jobs:
           from pathlib import Path
 
           files = [
-              'vacancy_price_cache.json',
-              'vacancy_price_cache_previous.json',
               'vacancy_price_cache_2p.json',
               'vacancy_price_cache_2p_previous.json',
-              'historical_data.json',
               'historical_data_2p.json',
-              'finalized_daily_data.json',
               'finalized_daily_data_2p.json',
               'demand_spike_history.json',
               'last_updated.json',
@@ -64,9 +60,15 @@ jobs:
           ]
 
           for name in files:
-              text = Path(name).read_text(encoding='utf-8')
+              path = Path(name)
+              if not path.exists():
+                  raise SystemExit(f'Missing required file: {name}')
+
+              text = path.read_text(encoding='utf-8')
+
               if 'NaN' in text or 'Infinity' in text or '-Infinity' in text:
                   raise SystemExit(f'Invalid numeric token in {name}')
+
               json.loads(text)
               print(f'OK: {name}')
           PY
@@ -74,17 +76,14 @@ jobs:
       - name: Commit updated cache files
         run: |
           set -e
+
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
-            vacancy_price_cache.json \
-            vacancy_price_cache_previous.json \
             vacancy_price_cache_2p.json \
             vacancy_price_cache_2p_previous.json \
-            historical_data.json \
             historical_data_2p.json \
-            finalized_daily_data.json \
             finalized_daily_data_2p.json \
             demand_spike_history.json \
             last_updated.json
@@ -97,3 +96,4 @@ jobs:
 
           git pull --rebase origin main || true
           git push origin HEAD:main
+          
