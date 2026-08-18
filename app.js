@@ -81,12 +81,602 @@ function updateMarketMeta() {
   const noteEl = document.getElementById("market-note");
   const summaryEl = document.getElementById("market-summary");
 
-  if (countEl) countEl.textContent = `追跡市場 ${marketHotelCount}施設`;
-  if (noteEl && marketMasterData.uiNote) noteEl.textContent = marketMasterData.uiNote;
+  if (countEl) {
+    countEl.textContent = `追跡市場 ${marketHotelCount}施設`;
+    countEl.classList.add("market-count-button");
+    countEl.setAttribute("role", "button");
+    countEl.setAttribute("tabindex", "0");
+    countEl.setAttribute("aria-haspopup", "dialog");
+    countEl.setAttribute(
+      "title",
+      "クリックすると追跡中の施設一覧を表示します"
+    );
+
+    countEl.onclick = openMarketHotelModal;
+
+    countEl.onkeydown = (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openMarketHotelModal();
+      }
+    };
+  }
+
+  if (noteEl && marketMasterData.uiNote) {
+    noteEl.textContent = marketMasterData.uiNote;
+  }
+
   if (summaryEl) {
-    summaryEl.textContent = marketMasterData.summary || `有効追跡施設 ${marketHotelCount}施設`;
+    summaryEl.textContent =
+      marketMasterData.summary ||
+      `有効追跡施設 ${marketHotelCount}施設`;
+  }
+
+  ensureMarketHotelModal();
+}
+
+
+// ========================================
+// 追跡市場42施設 一覧モーダル
+// ========================================
+
+function ensureMarketHotelModal() {
+  if (document.getElementById("market-hotel-modal")) return;
+
+  const style = document.createElement("style");
+  style.id = "market-hotel-modal-style";
+
+  style.textContent = `
+    .market-count-button {
+      cursor: pointer;
+      user-select: none;
+      transition:
+        background-color .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .market-count-button:hover,
+    .market-count-button:focus-visible {
+      background: #eaf5ff !important;
+      border-color: #7eb8e8 !important;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, .12);
+      outline: none;
+    }
+
+    .market-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(15, 23, 42, .52);
+      box-sizing: border-box;
+    }
+
+    .market-modal-backdrop.is-open {
+      display: flex;
+    }
+
+    .market-modal-panel {
+      width: min(980px, 96vw);
+      max-height: 88vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+    }
+
+    .market-modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .market-modal-title {
+      margin: 0;
+      color: #163b64;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .market-modal-subtitle {
+      margin: 5px 0 0;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .market-modal-close {
+      flex: 0 0 auto;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      border-radius: 8px;
+      padding: 7px 11px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .market-modal-close:hover {
+      background: #f8fafc;
+    }
+
+    .market-modal-body {
+      overflow-y: auto;
+      padding: 16px 20px 20px;
+    }
+
+    .market-modal-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .market-modal-summary span {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef6fd;
+      border: 1px solid #d5e8f8;
+      color: #285f8f;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .market-city-group + .market-city-group {
+      margin-top: 20px;
+    }
+
+    .market-city-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 0 0 9px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e7f0f8;
+      color: #1e5f96;
+      font-size: 16px;
+    }
+
+    .market-city-count {
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .market-hotel-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .market-hotel-item {
+      min-width: 0;
+      padding: 10px 11px;
+      border: 1px solid #e2e8f0;
+      border-radius: 9px;
+      background: #fbfdff;
+    }
+
+    .market-hotel-name {
+      margin: 0 0 4px;
+      color: #172033;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .market-hotel-meta {
+      color: #64748b;
+      font-size: 10px;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .market-hotel-zone {
+      display: inline-block;
+      margin-right: 5px;
+      color: #3b6f99;
+    }
+
+    .market-modal-note {
+      margin: 18px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #fff8e8;
+      color: #76591c;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .market-modal-backdrop {
+        padding: 10px;
+      }
+
+      .market-modal-panel {
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 11px;
+      }
+
+      .market-modal-header {
+        padding: 15px 14px 12px;
+      }
+
+      .market-modal-body {
+        padding: 13px 14px 16px;
+      }
+
+      .market-hotel-list {
+        grid-template-columns: 1fr;
+      }
+
+      .market-modal-title {
+        font-size: 17px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  const backdrop = document.createElement("div");
+
+  backdrop.id = "market-hotel-modal";
+  backdrop.className = "market-modal-backdrop";
+  backdrop.setAttribute("aria-hidden", "true");
+
+  backdrop.innerHTML = `
+    <section
+      class="market-modal-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="market-modal-title"
+    >
+      <header class="market-modal-header">
+
+        <div>
+          <h2
+            id="market-modal-title"
+            class="market-modal-title"
+          >
+            追跡市場の施設一覧
+          </h2>
+
+          <p class="market-modal-subtitle">
+            hotel_master_tatsuno.json に登録されている追跡対象です。
+            カレンダーの「○件」は、この一覧のうち対象日に
+            楽天トラベルで2名1室の販売が確認できた施設数です。
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="market-modal-close"
+          aria-label="施設一覧を閉じる"
+        >
+          閉じる
+        </button>
+
+      </header>
+
+      <div
+        class="market-modal-body"
+        id="market-hotel-modal-body"
+      ></div>
+
+    </section>
+  `;
+
+  document.body.appendChild(backdrop);
+
+  backdrop
+    .querySelector(".market-modal-close")
+    .addEventListener(
+      "click",
+      closeMarketHotelModal
+    );
+
+  backdrop.addEventListener(
+    "click",
+    (event) => {
+      if (event.target === backdrop) {
+        closeMarketHotelModal();
+      }
+    }
+  );
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        backdrop.classList.contains("is-open")
+      ) {
+        closeMarketHotelModal();
+      }
+    }
+  );
+}
+
+
+function renderMarketHotelModal() {
+  const body =
+    document.getElementById(
+      "market-hotel-modal-body"
+    );
+
+  if (!body) return;
+
+  const hotels =
+    (marketMasterData.hotels || [])
+      .filter(
+        hotel => hotel.enabled !== false
+      );
+
+  if (!hotels.length) {
+    body.innerHTML =
+      "<p>追跡施設データを読み込めませんでした。</p>";
+
+    return;
+  }
+
+  const cityOrder = [
+    "たつの市",
+    "相生市",
+    "赤穂市",
+    "姫路市"
+  ];
+
+  const cityLabel = {
+    "たつの市": "たつの市",
+    "相生市": "相生市",
+    "赤穂市": "赤穂市",
+    "姫路市": "姫路市（家島・坊勢）"
+  };
+
+  const grouped = new Map();
+
+  hotels.forEach(
+    (hotel) => {
+      const city =
+        hotel.city || "その他";
+
+      if (!grouped.has(city)) {
+        grouped.set(city, []);
+      }
+
+      grouped
+        .get(city)
+        .push(hotel);
+    }
+  );
+
+  const orderedCities = [
+    ...cityOrder.filter(
+      city => grouped.has(city)
+    ),
+
+    ...[...grouped.keys()]
+      .filter(
+        city =>
+          !cityOrder.includes(city)
+      )
+  ];
+
+  const summaryHtml =
+    orderedCities
+      .map(
+        (city) => {
+          const count =
+            grouped.get(city).length;
+
+          return `
+            <span>
+              ${escapeHtml(
+                cityLabel[city] || city
+              )}
+              ${count}施設
+            </span>
+          `;
+        }
+      )
+      .join("");
+
+  const groupsHtml =
+    orderedCities
+      .map(
+        (city) => {
+
+          const items =
+            grouped.get(city);
+
+          const hotelHtml =
+            items
+              .map(
+                (hotel, index) => {
+
+                  const zone =
+                    hotel.zone
+                      ? `
+                        <span class="market-hotel-zone">
+                          ${escapeHtml(
+                            hotel.zone
+                          )}
+                        </span>
+                      `
+                      : "";
+
+                  const hotelNo =
+                    hotel.hotelNo
+                      ? `
+                        楽天施設No.
+                        ${escapeHtml(
+                          String(
+                            hotel.hotelNo
+                          )
+                        )}
+                      `
+                      : "";
+
+                  const address =
+                    hotel.address
+                      ? escapeHtml(
+                          hotel.address
+                        )
+                      : "";
+
+                  return `
+                    <div class="market-hotel-item">
+
+                      <p class="market-hotel-name">
+                        ${index + 1}.
+                        ${escapeHtml(
+                          hotel.hotelName ||
+                          "名称未登録"
+                        )}
+                      </p>
+
+                      <div class="market-hotel-meta">
+                        ${zone}
+                        ${hotelNo}
+                      </div>
+
+                      ${
+                        address
+                          ? `
+                            <div class="market-hotel-meta">
+                              ${address}
+                            </div>
+                          `
+                          : ""
+                      }
+
+                    </div>
+                  `;
+                }
+              )
+              .join("");
+
+          return `
+            <section class="market-city-group">
+
+              <h3 class="market-city-title">
+
+                ${escapeHtml(
+                  cityLabel[city] ||
+                  city
+                )}
+
+                <span class="market-city-count">
+                  ${items.length}施設
+                </span>
+
+              </h3>
+
+              <div class="market-hotel-list">
+                ${hotelHtml}
+              </div>
+
+            </section>
+          `;
+        }
+      )
+      .join("");
+
+  body.innerHTML = `
+    <div class="market-modal-summary">
+      ${summaryHtml}
+    </div>
+
+    ${groupsHtml}
+
+    <p class="market-modal-note">
+      ※ この追跡施設は現時点の市場候補です。
+      今後、楽天トラベル上の販売状況や競合性を確認しながら、
+      hotel_master_tatsuno.json の追加・除外を行えば、
+      この一覧にも自動で反映されます。
+    </p>
+  `;
+}
+
+
+function openMarketHotelModal() {
+  ensureMarketHotelModal();
+  renderMarketHotelModal();
+
+  const modal =
+    document.getElementById(
+      "market-hotel-modal"
+    );
+
+  if (!modal) return;
+
+  modal.classList.add("is-open");
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
+
+  const closeButton =
+    modal.querySelector(
+      ".market-modal-close"
+    );
+
+  if (closeButton) {
+    closeButton.focus();
   }
 }
+
+
+function closeMarketHotelModal() {
+  const modal =
+    document.getElementById(
+      "market-hotel-modal"
+    );
+
+  if (!modal) return;
+
+  modal.classList.remove("is-open");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  const countEl =
+    document.getElementById(
+      "market-count"
+    );
+
+  if (countEl) {
+    countEl.focus();
+  }
+}
+
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 
 // 需要シンボル：2名基準の「残在庫 OR 平均単価」絶対値判定。
 // 追跡42施設のうち、実際に楽天で販売中の施設数と2名1室平均価格で判定する。
