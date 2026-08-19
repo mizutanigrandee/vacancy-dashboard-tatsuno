@@ -23,5 +23,18 @@
       "vacancy_diff": -5,
       "vacancy_ratio": -0.2941
     }
+  ],
+  "2026-08-19": [
+    {
+      "spike_date": "2026-09-21",
+      "price": 43951.0,
+      "last_price": 41788.0,
+      "price_diff": 2163.0,
+      "price_ratio": 0.0518,
+      "vacancy": 11,
+      "last_vac": 12,
+      "vacancy_diff": -1,
+      "vacancy_ratio": -0.0833
+    }
   ]
 }
