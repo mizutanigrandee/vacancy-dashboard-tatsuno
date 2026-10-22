@@ -196,17 +196,6 @@
   "2026-10-19": [],
   "2026-10-20": [
     {
-      "spike_date": "2026-10-21",
-      "price": 26970.0,
-      "last_price": 23478.0,
-      "price_diff": 3492.0,
-      "price_ratio": 0.1487,
-      "vacancy": 15,
-      "last_vac": 18,
-      "vacancy_diff": -3,
-      "vacancy_ratio": -0.1667
-    },
-    {
       "spike_date": "2026-11-28",
       "price": 45621.0,
       "last_price": 39480.0,
@@ -988,17 +977,40 @@
       "vacancy_ratio": -0.125
     }
   ],
-  "2026-10-21": [
+  "2026-10-21": [],
+  "2026-10-22": [
     {
-      "spike_date": "2026-10-21",
-      "price": 26970.0,
-      "last_price": 23478.0,
-      "price_diff": 3492.0,
-      "price_ratio": 0.1487,
-      "vacancy": 15,
-      "last_vac": 18,
+      "spike_date": "2026-10-23",
+      "price": 32327.0,
+      "last_price": 27591.0,
+      "price_diff": 4736.0,
+      "price_ratio": 0.1717,
+      "vacancy": 17,
+      "last_vac": 21,
+      "vacancy_diff": -4,
+      "vacancy_ratio": -0.1905
+    },
+    {
+      "spike_date": "2026-11-01",
+      "price": 28566.0,
+      "last_price": 27084.0,
+      "price_diff": 1482.0,
+      "price_ratio": 0.0547,
+      "vacancy": 20,
+      "last_vac": 23,
       "vacancy_diff": -3,
-      "vacancy_ratio": -0.1667
+      "vacancy_ratio": -0.1304
+    },
+    {
+      "spike_date": "2026-12-29",
+      "price": 47716.0,
+      "last_price": 43557.0,
+      "price_diff": 4159.0,
+      "price_ratio": 0.0955,
+      "vacancy": 16,
+      "last_vac": 17,
+      "vacancy_diff": -1,
+      "vacancy_ratio": -0.0588
     }
   ]
 }
