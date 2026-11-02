@@ -956,17 +956,6 @@
   "2026-10-21": [],
   "2026-10-22": [
     {
-      "spike_date": "2026-11-01",
-      "price": 28566.0,
-      "last_price": 27084.0,
-      "price_diff": 1482.0,
-      "price_ratio": 0.0547,
-      "vacancy": 20,
-      "last_vac": 23,
-      "vacancy_diff": -3,
-      "vacancy_ratio": -0.1304
-    },
-    {
       "spike_date": "2026-12-29",
       "price": 47716.0,
       "last_price": 43557.0,
@@ -1137,17 +1126,6 @@
   "2026-10-30": [],
   "2026-10-31": [
     {
-      "spike_date": "2026-11-01",
-      "price": 26936.0,
-      "last_price": 24434.0,
-      "price_diff": 2502.0,
-      "price_ratio": 0.1024,
-      "vacancy": 13,
-      "last_vac": 17,
-      "vacancy_diff": -4,
-      "vacancy_ratio": -0.2353
-    },
-    {
       "spike_date": "2026-11-02",
       "price": 28461.0,
       "last_price": 26134.0,
@@ -1160,17 +1138,6 @@
     }
   ],
   "2026-11-01": [
-    {
-      "spike_date": "2026-11-01",
-      "price": 26936.0,
-      "last_price": 24434.0,
-      "price_diff": 2502.0,
-      "price_ratio": 0.1024,
-      "vacancy": 13,
-      "last_vac": 17,
-      "vacancy_diff": -4,
-      "vacancy_ratio": -0.2353
-    },
     {
       "spike_date": "2026-11-02",
       "price": 29973.0,
@@ -1203,6 +1170,41 @@
       "last_vac": 12,
       "vacancy_diff": -2,
       "vacancy_ratio": -0.1667
+    }
+  ],
+  "2026-11-02": [
+    {
+      "spike_date": "2026-11-02",
+      "price": 29973.0,
+      "last_price": 28461.0,
+      "price_diff": 1512.0,
+      "price_ratio": 0.0531,
+      "vacancy": 18,
+      "last_vac": 20,
+      "vacancy_diff": -2,
+      "vacancy_ratio": -0.1
+    },
+    {
+      "spike_date": "2026-11-03",
+      "price": 25770.0,
+      "last_price": 23363.0,
+      "price_diff": 2407.0,
+      "price_ratio": 0.103,
+      "vacancy": 17,
+      "last_vac": 20,
+      "vacancy_diff": -3,
+      "vacancy_ratio": -0.15
+    },
+    {
+      "spike_date": "2026-11-10",
+      "price": 30508.0,
+      "last_price": 27676.0,
+      "price_diff": 2832.0,
+      "price_ratio": 0.1023,
+      "vacancy": 12,
+      "last_vac": 13,
+      "vacancy_diff": -1,
+      "vacancy_ratio": -0.0769
     }
   ]
 }
