@@ -1124,31 +1124,8 @@
     }
   ],
   "2026-10-30": [],
-  "2026-10-31": [
-    {
-      "spike_date": "2026-11-02",
-      "price": 28461.0,
-      "last_price": 26134.0,
-      "price_diff": 2327.0,
-      "price_ratio": 0.089,
-      "vacancy": 20,
-      "last_vac": 23,
-      "vacancy_diff": -3,
-      "vacancy_ratio": -0.1304
-    }
-  ],
+  "2026-10-31": [],
   "2026-11-01": [
-    {
-      "spike_date": "2026-11-02",
-      "price": 29973.0,
-      "last_price": 28461.0,
-      "price_diff": 1512.0,
-      "price_ratio": 0.0531,
-      "vacancy": 18,
-      "last_vac": 20,
-      "vacancy_diff": -2,
-      "vacancy_ratio": -0.1
-    },
     {
       "spike_date": "2026-11-10",
       "price": 27676.0,
@@ -1174,17 +1151,6 @@
   ],
   "2026-11-02": [
     {
-      "spike_date": "2026-11-02",
-      "price": 29973.0,
-      "last_price": 28461.0,
-      "price_diff": 1512.0,
-      "price_ratio": 0.0531,
-      "vacancy": 18,
-      "last_vac": 20,
-      "vacancy_diff": -2,
-      "vacancy_ratio": -0.1
-    },
-    {
       "spike_date": "2026-11-03",
       "price": 25770.0,
       "last_price": 23363.0,
@@ -1205,6 +1171,41 @@
       "last_vac": 13,
       "vacancy_diff": -1,
       "vacancy_ratio": -0.0769
+    }
+  ],
+  "2026-11-03": [
+    {
+      "spike_date": "2026-11-03",
+      "price": 25770.0,
+      "last_price": 23363.0,
+      "price_diff": 2407.0,
+      "price_ratio": 0.103,
+      "vacancy": 17,
+      "last_vac": 20,
+      "vacancy_diff": -3,
+      "vacancy_ratio": -0.15
+    },
+    {
+      "spike_date": "2026-11-04",
+      "price": 19193.0,
+      "last_price": 15822.0,
+      "price_diff": 3371.0,
+      "price_ratio": 0.2131,
+      "vacancy": 7,
+      "last_vac": 12,
+      "vacancy_diff": -5,
+      "vacancy_ratio": -0.4167
+    },
+    {
+      "spike_date": "2026-11-05",
+      "price": 27704.0,
+      "last_price": 25415.0,
+      "price_diff": 2289.0,
+      "price_ratio": 0.0901,
+      "vacancy": 14,
+      "last_vac": 15,
+      "vacancy_diff": -1,
+      "vacancy_ratio": -0.0667
     }
   ]
 }

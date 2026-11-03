@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-11-02T12:14:54+09:00",
-  "last_updated_jst": "2026-11-02 12:14:54 JST",
+  "last_updated_iso": "2026-11-03T13:32:55+09:00",
+  "last_updated_jst": "2026-11-03 13:32:55 JST",
   "source": "github-actions",
-  "git_sha": "58908c6",
+  "git_sha": "038acd1",
   "market": "西播磨・瀬戸内沿岸（たつの中心）",
   "market_version": 3,
   "market_hotel_count": 42,
