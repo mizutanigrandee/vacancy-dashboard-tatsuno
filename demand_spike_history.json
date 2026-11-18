@@ -1,5 +1,4 @@
 {
-  "2026-08-19": [],
   "2026-08-20": [],
   "2026-08-21": [],
   "2026-08-22": [
@@ -1191,17 +1190,6 @@
   ],
   "2026-11-12": [
     {
-      "spike_date": "2026-11-17",
-      "price": 24751.0,
-      "last_price": 23177.0,
-      "price_diff": 1574.0,
-      "price_ratio": 0.0679,
-      "vacancy": 15,
-      "last_vac": 17,
-      "vacancy_diff": -2,
-      "vacancy_ratio": -0.1176
-    },
-    {
       "spike_date": "2026-11-19",
       "price": 29125.0,
       "last_price": 26885.0,
@@ -1239,17 +1227,6 @@
   ],
   "2026-11-14": [
     {
-      "spike_date": "2026-11-17",
-      "price": 25292.0,
-      "last_price": 23147.0,
-      "price_diff": 2145.0,
-      "price_ratio": 0.0927,
-      "vacancy": 12,
-      "last_vac": 14,
-      "vacancy_diff": -2,
-      "vacancy_ratio": -0.1429
-    },
-    {
       "spike_date": "2026-11-20",
       "price": 29045.0,
       "last_price": 27156.0,
@@ -1276,17 +1253,6 @@
   ],
   "2026-11-16": [
     {
-      "spike_date": "2026-11-17",
-      "price": 29650.0,
-      "last_price": 25071.0,
-      "price_diff": 4579.0,
-      "price_ratio": 0.1826,
-      "vacancy": 11,
-      "last_vac": 12,
-      "vacancy_diff": -1,
-      "vacancy_ratio": -0.0833
-    },
-    {
       "spike_date": "2026-11-18",
       "price": 31473.0,
       "last_price": 24847.0,
@@ -1311,17 +1277,6 @@
   ],
   "2026-11-17": [
     {
-      "spike_date": "2026-11-17",
-      "price": 29650.0,
-      "last_price": 25071.0,
-      "price_diff": 4579.0,
-      "price_ratio": 0.1826,
-      "vacancy": 11,
-      "last_vac": 12,
-      "vacancy_diff": -1,
-      "vacancy_ratio": -0.0833
-    },
-    {
       "spike_date": "2026-11-25",
       "price": 24919.0,
       "last_price": 23679.0,
@@ -1331,6 +1286,19 @@
       "last_vac": 22,
       "vacancy_diff": -2,
       "vacancy_ratio": -0.0909
+    }
+  ],
+  "2026-11-18": [
+    {
+      "spike_date": "2026-11-19",
+      "price": 30824.0,
+      "last_price": 29168.0,
+      "price_diff": 1656.0,
+      "price_ratio": 0.0568,
+      "vacancy": 9,
+      "last_vac": 12,
+      "vacancy_diff": -3,
+      "vacancy_ratio": -0.25
     }
   ]
 }
