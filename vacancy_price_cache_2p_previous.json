@@ -1,12 +1,4 @@
 {
-  "2026-08-20": {
-    "vacancy": 11,
-    "avg_price": 26616.0,
-    "last_vacancy": 15,
-    "last_avg_price": 25654.0,
-    "vacancy_diff": -4,
-    "avg_price_diff": 962.0
-  },
   "2026-08-21": {
     "vacancy": 16,
     "avg_price": 25324.0,
@@ -753,123 +745,123 @@
   },
   "2026-11-22": {
     "vacancy": 4,
-    "avg_price": 22590.0,
-    "last_vacancy": 6,
-    "last_avg_price": 33060.0,
-    "vacancy_diff": -2,
-    "avg_price_diff": -10470.0
+    "avg_price": 24900.0,
+    "last_vacancy": 4,
+    "last_avg_price": 22590.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 2310.0
   },
   "2026-11-23": {
-    "vacancy": 20,
-    "avg_price": 24440.0,
-    "last_vacancy": 22,
-    "last_avg_price": 28817.0,
-    "vacancy_diff": -2,
-    "avg_price_diff": -4377.0
+    "vacancy": 17,
+    "avg_price": 27456.0,
+    "last_vacancy": 20,
+    "last_avg_price": 24440.0,
+    "vacancy_diff": -3,
+    "avg_price_diff": 3016.0
   },
   "2026-11-24": {
-    "vacancy": 18,
-    "avg_price": 25851.0,
+    "vacancy": 16,
+    "avg_price": 24173.0,
     "last_vacancy": 18,
-    "last_avg_price": 24799.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 1052.0
+    "last_avg_price": 25851.0,
+    "vacancy_diff": -2,
+    "avg_price_diff": -1678.0
   },
   "2026-11-25": {
     "vacancy": 19,
     "avg_price": 24909.0,
     "last_vacancy": 19,
-    "last_avg_price": 25119.0,
+    "last_avg_price": 24909.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -210.0
+    "avg_price_diff": 0.0
   },
   "2026-11-26": {
-    "vacancy": 19,
-    "avg_price": 29837.0,
+    "vacancy": 17,
+    "avg_price": 31232.0,
     "last_vacancy": 19,
-    "last_avg_price": 29753.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 84.0
+    "last_avg_price": 29837.0,
+    "vacancy_diff": -2,
+    "avg_price_diff": 1395.0
   },
   "2026-11-27": {
-    "vacancy": 17,
-    "avg_price": 23042.0,
+    "vacancy": 18,
+    "avg_price": 29339.0,
     "last_vacancy": 17,
-    "last_avg_price": 23395.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": -353.0
+    "last_avg_price": 23042.0,
+    "vacancy_diff": 1,
+    "avg_price_diff": 6297.0
   },
   "2026-11-28": {
     "vacancy": 13,
-    "avg_price": 37277.0,
-    "last_vacancy": 14,
-    "last_avg_price": 36086.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": 1191.0
+    "avg_price": 36123.0,
+    "last_vacancy": 13,
+    "last_avg_price": 37277.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -1154.0
   },
   "2026-11-29": {
     "vacancy": 18,
-    "avg_price": 19125.0,
-    "last_vacancy": 19,
-    "last_avg_price": 20066.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -941.0
+    "avg_price": 20014.0,
+    "last_vacancy": 18,
+    "last_avg_price": 19125.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 889.0
   },
   "2026-11-30": {
     "vacancy": 21,
-    "avg_price": 24387.0,
+    "avg_price": 24570.0,
     "last_vacancy": 21,
-    "last_avg_price": 24292.0,
+    "last_avg_price": 24387.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 95.0
+    "avg_price_diff": 183.0
   },
   "2026-12-01": {
     "vacancy": 19,
-    "avg_price": 25943.0,
-    "last_vacancy": 20,
-    "last_avg_price": 24026.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": 1917.0
+    "avg_price": 25732.0,
+    "last_vacancy": 19,
+    "last_avg_price": 25943.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -211.0
   },
   "2026-12-02": {
     "vacancy": 23,
     "avg_price": 22464.0,
-    "last_vacancy": 24,
-    "last_avg_price": 22032.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": 432.0
+    "last_vacancy": 23,
+    "last_avg_price": 22464.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2026-12-03": {
     "vacancy": 25,
     "avg_price": 24134.0,
     "last_vacancy": 25,
-    "last_avg_price": 24162.0,
+    "last_avg_price": 24134.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -28.0
+    "avg_price_diff": 0.0
   },
   "2026-12-04": {
     "vacancy": 24,
     "avg_price": 25250.0,
-    "last_vacancy": 25,
-    "last_avg_price": 26088.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -838.0
+    "last_vacancy": 24,
+    "last_avg_price": 25250.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2026-12-05": {
-    "vacancy": 20,
-    "avg_price": 32884.0,
+    "vacancy": 21,
+    "avg_price": 34658.0,
     "last_vacancy": 20,
-    "last_avg_price": 34083.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": -1199.0
+    "last_avg_price": 32884.0,
+    "vacancy_diff": 1,
+    "avg_price_diff": 1774.0
   },
   "2026-12-06": {
     "vacancy": 26,
-    "avg_price": 27811.0,
+    "avg_price": 27903.0,
     "last_vacancy": 26,
-    "last_avg_price": 29394.0,
+    "last_avg_price": 27811.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -1583.0
+    "avg_price_diff": 92.0
   },
   "2026-12-07": {
     "vacancy": 23,
@@ -880,44 +872,44 @@
     "avg_price_diff": 0.0
   },
   "2026-12-08": {
-    "vacancy": 20,
-    "avg_price": 21925.0,
+    "vacancy": 19,
+    "avg_price": 21689.0,
     "last_vacancy": 20,
-    "last_avg_price": 21525.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 400.0
+    "last_avg_price": 21925.0,
+    "vacancy_diff": -1,
+    "avg_price_diff": -236.0
   },
   "2026-12-09": {
     "vacancy": 22,
-    "avg_price": 24762.0,
+    "avg_price": 24171.0,
     "last_vacancy": 22,
-    "last_avg_price": 24752.0,
+    "last_avg_price": 24762.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 10.0
+    "avg_price_diff": -591.0
   },
   "2026-12-10": {
     "vacancy": 24,
-    "avg_price": 24147.0,
+    "avg_price": 24193.0,
     "last_vacancy": 24,
-    "last_avg_price": 24203.0,
+    "last_avg_price": 24147.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -56.0
+    "avg_price_diff": 46.0
   },
   "2026-12-11": {
     "vacancy": 25,
     "avg_price": 24516.0,
     "last_vacancy": 25,
-    "last_avg_price": 24490.0,
+    "last_avg_price": 24516.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 26.0
+    "avg_price_diff": 0.0
   },
   "2026-12-12": {
     "vacancy": 22,
-    "avg_price": 35614.0,
+    "avg_price": 35844.0,
     "last_vacancy": 22,
-    "last_avg_price": 35424.0,
+    "last_avg_price": 35614.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 190.0
+    "avg_price_diff": 230.0
   },
   "2026-12-13": {
     "vacancy": 22,
@@ -928,20 +920,20 @@
     "avg_price_diff": 0.0
   },
   "2026-12-14": {
-    "vacancy": 24,
-    "avg_price": 26148.0,
+    "vacancy": 23,
+    "avg_price": 26042.0,
     "last_vacancy": 24,
-    "last_avg_price": 25914.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 234.0
+    "last_avg_price": 26148.0,
+    "vacancy_diff": -1,
+    "avg_price_diff": -106.0
   },
   "2026-12-15": {
-    "vacancy": 22,
-    "avg_price": 23324.0,
+    "vacancy": 21,
+    "avg_price": 23073.0,
     "last_vacancy": 22,
     "last_avg_price": 23324.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "vacancy_diff": -1,
+    "avg_price_diff": -251.0
   },
   "2026-12-16": {
     "vacancy": 25,
@@ -955,41 +947,41 @@
     "vacancy": 28,
     "avg_price": 25059.0,
     "last_vacancy": 28,
-    "last_avg_price": 25147.0,
+    "last_avg_price": 25059.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -88.0
+    "avg_price_diff": 0.0
   },
   "2026-12-18": {
     "vacancy": 26,
-    "avg_price": 27700.0,
+    "avg_price": 27711.0,
     "last_vacancy": 26,
     "last_avg_price": 27700.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 11.0
   },
   "2026-12-19": {
     "vacancy": 21,
     "avg_price": 39573.0,
     "last_vacancy": 21,
-    "last_avg_price": 39468.0,
+    "last_avg_price": 39573.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 105.0
+    "avg_price_diff": 0.0
   },
   "2026-12-20": {
     "vacancy": 27,
-    "avg_price": 28575.0,
+    "avg_price": 28572.0,
     "last_vacancy": 27,
-    "last_avg_price": 27153.0,
+    "last_avg_price": 28575.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 1422.0
+    "avg_price_diff": -3.0
   },
   "2026-12-21": {
     "vacancy": 24,
     "avg_price": 26735.0,
     "last_vacancy": 24,
-    "last_avg_price": 26690.0,
+    "last_avg_price": 26735.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 45.0
+    "avg_price_diff": 0.0
   },
   "2026-12-22": {
     "vacancy": 21,
@@ -1001,67 +993,67 @@
   },
   "2026-12-23": {
     "vacancy": 24,
-    "avg_price": 24187.0,
+    "avg_price": 24233.0,
     "last_vacancy": 24,
     "last_avg_price": 24187.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 46.0
   },
   "2026-12-24": {
-    "vacancy": 21,
-    "avg_price": 26753.0,
-    "last_vacancy": 20,
-    "last_avg_price": 25635.0,
-    "vacancy_diff": 1,
-    "avg_price_diff": 1118.0
+    "vacancy": 20,
+    "avg_price": 26124.0,
+    "last_vacancy": 21,
+    "last_avg_price": 26753.0,
+    "vacancy_diff": -1,
+    "avg_price_diff": -629.0
   },
   "2026-12-25": {
-    "vacancy": 20,
-    "avg_price": 28239.0,
+    "vacancy": 21,
+    "avg_price": 29095.0,
     "last_vacancy": 20,
     "last_avg_price": 28239.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "vacancy_diff": 1,
+    "avg_price_diff": 856.0
   },
   "2026-12-26": {
     "vacancy": 18,
-    "avg_price": 40350.0,
+    "avg_price": 40422.0,
     "last_vacancy": 18,
     "last_avg_price": 40350.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 72.0
   },
   "2026-12-27": {
-    "vacancy": 18,
-    "avg_price": 43238.0,
+    "vacancy": 17,
+    "avg_price": 40928.0,
     "last_vacancy": 18,
     "last_avg_price": 43238.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "vacancy_diff": -1,
+    "avg_price_diff": -2310.0
   },
   "2026-12-28": {
     "vacancy": 15,
-    "avg_price": 42030.0,
+    "avg_price": 42017.0,
     "last_vacancy": 15,
-    "last_avg_price": 42063.0,
+    "last_avg_price": 42030.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -33.0
+    "avg_price_diff": -13.0
   },
   "2026-12-29": {
-    "vacancy": 12,
-    "avg_price": 35306.0,
-    "last_vacancy": 13,
-    "last_avg_price": 40976.0,
+    "vacancy": 11,
+    "avg_price": 36094.0,
+    "last_vacancy": 12,
+    "last_avg_price": 35306.0,
     "vacancy_diff": -1,
-    "avg_price_diff": -5670.0
+    "avg_price_diff": 788.0
   },
   "2026-12-30": {
     "vacancy": 15,
-    "avg_price": 46768.0,
+    "avg_price": 46761.0,
     "last_vacancy": 15,
-    "last_avg_price": 46835.0,
+    "last_avg_price": 46768.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -67.0
+    "avg_price_diff": -7.0
   },
   "2026-12-31": {
     "vacancy": 7,
@@ -1081,19 +1073,19 @@
   },
   "2027-01-02": {
     "vacancy": 11,
-    "avg_price": 54043.0,
+    "avg_price": 53861.0,
     "last_vacancy": 11,
     "last_avg_price": 54043.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -182.0
   },
   "2027-01-03": {
     "vacancy": 20,
-    "avg_price": 48924.0,
+    "avg_price": 49336.0,
     "last_vacancy": 20,
-    "last_avg_price": 49529.0,
+    "last_avg_price": 48924.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -605.0
+    "avg_price_diff": 412.0
   },
   "2027-01-04": {
     "vacancy": 19,
@@ -1105,11 +1097,11 @@
   },
   "2027-01-05": {
     "vacancy": 18,
-    "avg_price": 23158.0,
+    "avg_price": 23470.0,
     "last_vacancy": 18,
     "last_avg_price": 23158.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 312.0
   },
   "2027-01-06": {
     "vacancy": 22,
@@ -1123,41 +1115,41 @@
     "vacancy": 26,
     "avg_price": 24015.0,
     "last_vacancy": 26,
-    "last_avg_price": 24019.0,
+    "last_avg_price": 24015.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -4.0
+    "avg_price_diff": 0.0
   },
   "2027-01-08": {
     "vacancy": 27,
-    "avg_price": 25500.0,
+    "avg_price": 25496.0,
     "last_vacancy": 27,
-    "last_avg_price": 25450.0,
+    "last_avg_price": 25500.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 50.0
+    "avg_price_diff": -4.0
   },
   "2027-01-09": {
-    "vacancy": 24,
-    "avg_price": 39404.0,
+    "vacancy": 23,
+    "avg_price": 38056.0,
     "last_vacancy": 24,
-    "last_avg_price": 38906.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 498.0
+    "last_avg_price": 39404.0,
+    "vacancy_diff": -1,
+    "avg_price_diff": -1348.0
   },
   "2027-01-10": {
-    "vacancy": 26,
-    "avg_price": 37979.0,
+    "vacancy": 25,
+    "avg_price": 36947.0,
     "last_vacancy": 26,
-    "last_avg_price": 37896.0,
-    "vacancy_diff": 0,
-    "avg_price_diff": 83.0
+    "last_avg_price": 37979.0,
+    "vacancy_diff": -1,
+    "avg_price_diff": -1032.0
   },
   "2027-01-11": {
     "vacancy": 26,
     "avg_price": 27591.0,
     "last_vacancy": 26,
-    "last_avg_price": 27491.0,
+    "last_avg_price": 27591.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 100.0
+    "avg_price_diff": 0.0
   },
   "2027-01-12": {
     "vacancy": 24,
@@ -1169,35 +1161,35 @@
   },
   "2027-01-13": {
     "vacancy": 26,
-    "avg_price": 23644.0,
+    "avg_price": 23682.0,
     "last_vacancy": 26,
-    "last_avg_price": 23648.0,
+    "last_avg_price": 23644.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -4.0
+    "avg_price_diff": 38.0
   },
   "2027-01-14": {
     "vacancy": 27,
-    "avg_price": 25048.0,
+    "avg_price": 25452.0,
     "last_vacancy": 27,
-    "last_avg_price": 25052.0,
+    "last_avg_price": 25048.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -4.0
+    "avg_price_diff": 404.0
   },
   "2027-01-15": {
     "vacancy": 28,
     "avg_price": 26443.0,
     "last_vacancy": 28,
-    "last_avg_price": 26446.0,
+    "last_avg_price": 26443.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -3.0
+    "avg_price_diff": 0.0
   },
   "2027-01-16": {
     "vacancy": 25,
-    "avg_price": 36331.0,
+    "avg_price": 36366.0,
     "last_vacancy": 25,
     "last_avg_price": 36331.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 35.0
   },
   "2027-01-17": {
     "vacancy": 28,
@@ -1209,51 +1201,51 @@
   },
   "2027-01-18": {
     "vacancy": 23,
-    "avg_price": 23314.0,
+    "avg_price": 23310.0,
     "last_vacancy": 23,
-    "last_avg_price": 23218.0,
+    "last_avg_price": 23314.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 96.0
+    "avg_price_diff": -4.0
   },
   "2027-01-19": {
     "vacancy": 22,
-    "avg_price": 23236.0,
+    "avg_price": 23231.0,
     "last_vacancy": 22,
-    "last_avg_price": 23174.0,
+    "last_avg_price": 23236.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 62.0
+    "avg_price_diff": -5.0
   },
   "2027-01-20": {
     "vacancy": 25,
-    "avg_price": 23348.0,
+    "avg_price": 23344.0,
     "last_vacancy": 25,
-    "last_avg_price": 23352.0,
+    "last_avg_price": 23348.0,
     "vacancy_diff": 0,
     "avg_price_diff": -4.0
   },
   "2027-01-21": {
     "vacancy": 27,
-    "avg_price": 23457.0,
+    "avg_price": 23453.0,
     "last_vacancy": 27,
-    "last_avg_price": 23464.0,
+    "last_avg_price": 23457.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -7.0
+    "avg_price_diff": -4.0
   },
   "2027-01-22": {
     "vacancy": 28,
-    "avg_price": 26640.0,
+    "avg_price": 26636.0,
     "last_vacancy": 28,
     "last_avg_price": 26640.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -4.0
   },
   "2027-01-23": {
     "vacancy": 27,
     "avg_price": 34625.0,
     "last_vacancy": 27,
-    "last_avg_price": 34628.0,
+    "last_avg_price": 34625.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -3.0
+    "avg_price_diff": 0.0
   },
   "2027-01-24": {
     "vacancy": 27,
@@ -1273,27 +1265,27 @@
   },
   "2027-01-26": {
     "vacancy": 22,
-    "avg_price": 22615.0,
+    "avg_price": 22611.0,
     "last_vacancy": 22,
     "last_avg_price": 22615.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -4.0
   },
   "2027-01-27": {
     "vacancy": 26,
-    "avg_price": 23393.0,
+    "avg_price": 23389.0,
     "last_vacancy": 26,
-    "last_avg_price": 23401.0,
+    "last_avg_price": 23393.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -8.0
+    "avg_price_diff": -4.0
   },
   "2027-01-28": {
     "vacancy": 27,
-    "avg_price": 25342.0,
+    "avg_price": 25327.0,
     "last_vacancy": 27,
     "last_avg_price": 25342.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -15.0
   },
   "2027-01-29": {
     "vacancy": 27,
@@ -1305,19 +1297,19 @@
   },
   "2027-01-30": {
     "vacancy": 27,
-    "avg_price": 34158.0,
+    "avg_price": 34741.0,
     "last_vacancy": 27,
     "last_avg_price": 34158.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 583.0
   },
   "2027-01-31": {
     "vacancy": 28,
     "avg_price": 26216.0,
     "last_vacancy": 28,
-    "last_avg_price": 26144.0,
+    "last_avg_price": 26216.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 72.0
+    "avg_price_diff": 0.0
   },
   "2027-02-01": {
     "vacancy": 19,
@@ -1409,19 +1401,19 @@
   },
   "2027-02-12": {
     "vacancy": 25,
-    "avg_price": 27458.0,
+    "avg_price": 27502.0,
     "last_vacancy": 25,
     "last_avg_price": 27458.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": 44.0
   },
   "2027-02-13": {
     "vacancy": 24,
-    "avg_price": 37068.0,
+    "avg_price": 36243.0,
     "last_vacancy": 24,
     "last_avg_price": 37068.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -825.0
   },
   "2027-02-14": {
     "vacancy": 25,
@@ -1450,18 +1442,18 @@
   "2027-02-17": {
     "vacancy": 24,
     "avg_price": 24269.0,
-    "last_vacancy": 23,
-    "last_avg_price": 24798.0,
-    "vacancy_diff": 1,
-    "avg_price_diff": -529.0
-  },
-  "2027-02-18": {
-    "vacancy": 23,
-    "avg_price": 26966.0,
-    "last_vacancy": 23,
-    "last_avg_price": 26966.0,
+    "last_vacancy": 24,
+    "last_avg_price": 24269.0,
     "vacancy_diff": 0,
     "avg_price_diff": 0.0
+  },
+  "2027-02-18": {
+    "vacancy": 24,
+    "avg_price": 26346.0,
+    "last_vacancy": 23,
+    "last_avg_price": 26966.0,
+    "vacancy_diff": 1,
+    "avg_price_diff": -620.0
   },
   "2027-02-19": {
     "vacancy": 24,
@@ -1587,17 +1579,17 @@
     "vacancy": 20,
     "avg_price": 36954.0,
     "last_vacancy": 20,
-    "last_avg_price": 36959.0,
+    "last_avg_price": 36954.0,
     "vacancy_diff": 0,
-    "avg_price_diff": -5.0
+    "avg_price_diff": 0.0
   },
   "2027-03-07": {
     "vacancy": 21,
-    "avg_price": 30949.0,
+    "avg_price": 30944.0,
     "last_vacancy": 21,
-    "last_avg_price": 30944.0,
+    "last_avg_price": 30949.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 5.0
+    "avg_price_diff": -5.0
   },
   "2027-03-08": {
     "vacancy": 21,
@@ -1769,11 +1761,11 @@
   },
   "2027-03-29": {
     "vacancy": 20,
-    "avg_price": 28334.0,
+    "avg_price": 28329.0,
     "last_vacancy": 20,
     "last_avg_price": 28334.0,
     "vacancy_diff": 0,
-    "avg_price_diff": 0.0
+    "avg_price_diff": -5.0
   },
   "2027-03-30": {
     "vacancy": 18,
@@ -1794,314 +1786,314 @@
   "2027-04-01": {
     "vacancy": 15,
     "avg_price": 29607.0,
-    "last_vacancy": 16,
-    "last_avg_price": 90256.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -60649.0
+    "last_vacancy": 15,
+    "last_avg_price": 29607.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-02": {
     "vacancy": 14,
     "avg_price": 32827.0,
-    "last_vacancy": 15,
-    "last_avg_price": 97305.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -64478.0
+    "last_vacancy": 14,
+    "last_avg_price": 32827.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-03": {
     "vacancy": 14,
     "avg_price": 47058.0,
-    "last_vacancy": 15,
-    "last_avg_price": 110587.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -63529.0
+    "last_vacancy": 14,
+    "last_avg_price": 47058.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-04": {
     "vacancy": 18,
     "avg_price": 31019.0,
-    "last_vacancy": 19,
-    "last_avg_price": 82018.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -50999.0
+    "last_vacancy": 18,
+    "last_avg_price": 31019.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-05": {
     "vacancy": 18,
     "avg_price": 27690.0,
-    "last_vacancy": 19,
-    "last_avg_price": 78864.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -51174.0
+    "last_vacancy": 18,
+    "last_avg_price": 27690.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-06": {
     "vacancy": 16,
     "avg_price": 24608.0,
-    "last_vacancy": 17,
-    "last_avg_price": 81984.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57376.0
+    "last_vacancy": 16,
+    "last_avg_price": 24608.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-07": {
     "vacancy": 16,
     "avg_price": 24608.0,
-    "last_vacancy": 17,
-    "last_avg_price": 81984.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57376.0
+    "last_vacancy": 16,
+    "last_avg_price": 24608.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-08": {
     "vacancy": 19,
     "avg_price": 27519.0,
-    "last_vacancy": 20,
-    "last_avg_price": 76143.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48624.0
+    "last_vacancy": 19,
+    "last_avg_price": 27519.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-09": {
     "vacancy": 16,
     "avg_price": 32188.0,
-    "last_vacancy": 17,
-    "last_avg_price": 89118.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -56930.0
+    "last_vacancy": 16,
+    "last_avg_price": 32188.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-10": {
     "vacancy": 16,
     "avg_price": 42332.0,
-    "last_vacancy": 17,
-    "last_avg_price": 98665.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -56333.0
+    "last_vacancy": 16,
+    "last_avg_price": 42332.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-11": {
     "vacancy": 19,
     "avg_price": 28888.0,
-    "last_vacancy": 20,
-    "last_avg_price": 77444.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48556.0
+    "last_vacancy": 19,
+    "last_avg_price": 28888.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-12": {
     "vacancy": 17,
     "avg_price": 24387.0,
-    "last_vacancy": 18,
-    "last_avg_price": 78588.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -54201.0
+    "last_vacancy": 17,
+    "last_avg_price": 24387.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-13": {
     "vacancy": 16,
     "avg_price": 24002.0,
-    "last_vacancy": 17,
-    "last_avg_price": 81413.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57411.0
+    "last_vacancy": 16,
+    "last_avg_price": 24002.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-14": {
     "vacancy": 18,
     "avg_price": 25109.0,
-    "last_vacancy": 19,
-    "last_avg_price": 76419.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -51310.0
+    "last_vacancy": 18,
+    "last_avg_price": 25109.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-15": {
     "vacancy": 19,
     "avg_price": 27019.0,
-    "last_vacancy": 20,
-    "last_avg_price": 75668.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48649.0
+    "last_vacancy": 19,
+    "last_avg_price": 27019.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-16": {
     "vacancy": 19,
     "avg_price": 28725.0,
-    "last_vacancy": 20,
-    "last_avg_price": 77288.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48563.0
+    "last_vacancy": 19,
+    "last_avg_price": 28725.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-17": {
     "vacancy": 19,
     "avg_price": 37435.0,
-    "last_vacancy": 20,
-    "last_avg_price": 85564.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48129.0
+    "last_vacancy": 19,
+    "last_avg_price": 37435.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-18": {
     "vacancy": 19,
     "avg_price": 28809.0,
-    "last_vacancy": 20,
-    "last_avg_price": 77368.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48559.0
+    "last_vacancy": 19,
+    "last_avg_price": 28809.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-19": {
     "vacancy": 16,
     "avg_price": 26551.0,
-    "last_vacancy": 17,
-    "last_avg_price": 83813.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57262.0
+    "last_vacancy": 16,
+    "last_avg_price": 26551.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-20": {
     "vacancy": 14,
     "avg_price": 22824.0,
-    "last_vacancy": 15,
-    "last_avg_price": 87969.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -65145.0
+    "last_vacancy": 14,
+    "last_avg_price": 22824.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-21": {
     "vacancy": 16,
     "avg_price": 24191.0,
-    "last_vacancy": 17,
-    "last_avg_price": 81591.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57400.0
+    "last_vacancy": 16,
+    "last_avg_price": 24191.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-22": {
     "vacancy": 19,
     "avg_price": 27330.0,
-    "last_vacancy": 20,
-    "last_avg_price": 75964.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48634.0
+    "last_vacancy": 19,
+    "last_avg_price": 27330.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-23": {
     "vacancy": 19,
     "avg_price": 28830.0,
-    "last_vacancy": 20,
-    "last_avg_price": 77388.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48558.0
+    "last_vacancy": 19,
+    "last_avg_price": 28830.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-24": {
     "vacancy": 19,
     "avg_price": 37494.0,
-    "last_vacancy": 20,
-    "last_avg_price": 85620.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48126.0
+    "last_vacancy": 19,
+    "last_avg_price": 37494.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-25": {
     "vacancy": 19,
-    "avg_price": 29320.0,
-    "last_vacancy": 20,
-    "last_avg_price": 77854.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48534.0
+    "avg_price": 29314.0,
+    "last_vacancy": 19,
+    "last_avg_price": 29320.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -6.0
   },
   "2027-04-26": {
     "vacancy": 19,
     "avg_price": 28408.0,
-    "last_vacancy": 20,
-    "last_avg_price": 76988.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -48580.0
+    "last_vacancy": 19,
+    "last_avg_price": 28408.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-27": {
     "vacancy": 16,
     "avg_price": 25970.0,
-    "last_vacancy": 17,
-    "last_avg_price": 83266.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -57296.0
+    "last_vacancy": 16,
+    "last_avg_price": 25970.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-28": {
     "vacancy": 17,
     "avg_price": 31637.0,
-    "last_vacancy": 18,
-    "last_avg_price": 85435.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -53798.0
+    "last_vacancy": 17,
+    "last_avg_price": 31637.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-29": {
     "vacancy": 18,
     "avg_price": 38956.0,
-    "last_vacancy": 19,
-    "last_avg_price": 89537.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -50581.0
+    "last_vacancy": 18,
+    "last_avg_price": 38956.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-04-30": {
     "vacancy": 17,
     "avg_price": 38182.0,
-    "last_vacancy": 18,
-    "last_avg_price": 91617.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -53435.0
+    "last_vacancy": 17,
+    "last_avg_price": 38182.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-01": {
     "vacancy": 12,
     "avg_price": 53730.0,
-    "last_vacancy": 13,
-    "last_avg_price": 126520.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -72790.0
+    "last_vacancy": 12,
+    "last_avg_price": 53730.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-02": {
     "vacancy": 12,
-    "avg_price": 56338.0,
-    "last_vacancy": 13,
-    "last_avg_price": 128927.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -72589.0
+    "avg_price": 56346.0,
+    "last_vacancy": 12,
+    "last_avg_price": 56338.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 8.0
   },
   "2027-05-03": {
     "vacancy": 12,
-    "avg_price": 55722.0,
-    "last_vacancy": 13,
-    "last_avg_price": 128359.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -72637.0
+    "avg_price": 55748.0,
+    "last_vacancy": 12,
+    "last_avg_price": 55722.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 26.0
   },
   "2027-05-04": {
     "vacancy": 12,
-    "avg_price": 54633.0,
-    "last_vacancy": 13,
-    "last_avg_price": 127353.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -72720.0
+    "avg_price": 54616.0,
+    "last_vacancy": 12,
+    "last_avg_price": 54633.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -17.0
   },
   "2027-05-05": {
     "vacancy": 12,
     "avg_price": 41692.0,
-    "last_vacancy": 13,
-    "last_avg_price": 115408.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -73716.0
+    "last_vacancy": 12,
+    "last_avg_price": 41692.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-06": {
     "vacancy": 12,
     "avg_price": 34966.0,
-    "last_vacancy": 13,
-    "last_avg_price": 109199.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74233.0
+    "last_vacancy": 12,
+    "last_avg_price": 34966.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-07": {
     "vacancy": 13,
     "avg_price": 34287.0,
-    "last_vacancy": 14,
-    "last_avg_price": 103267.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68980.0
+    "last_vacancy": 13,
+    "last_avg_price": 34287.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-08": {
     "vacancy": 13,
-    "avg_price": 42404.0,
-    "last_vacancy": 14,
-    "last_avg_price": 110803.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68399.0
+    "avg_price": 42411.0,
+    "last_vacancy": 13,
+    "last_avg_price": 42404.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 7.0
   },
   "2027-05-09": {
     "vacancy": 13,
     "avg_price": 34841.0,
-    "last_vacancy": 14,
-    "last_avg_price": 103781.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68940.0
+    "last_vacancy": 13,
+    "last_avg_price": 34841.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-10": {
     "vacancy": 5,
@@ -2122,377 +2114,377 @@
   "2027-05-12": {
     "vacancy": 10,
     "avg_price": 33122.0,
-    "last_vacancy": 11,
-    "last_avg_price": 121020.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -87898.0
+    "last_vacancy": 10,
+    "last_avg_price": 33122.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-13": {
     "vacancy": 12,
     "avg_price": 33228.0,
-    "last_vacancy": 13,
-    "last_avg_price": 107595.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74367.0
+    "last_vacancy": 12,
+    "last_avg_price": 33228.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-14": {
     "vacancy": 12,
     "avg_price": 34427.0,
-    "last_vacancy": 13,
-    "last_avg_price": 108702.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74275.0
+    "last_vacancy": 12,
+    "last_avg_price": 34427.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-15": {
     "vacancy": 12,
     "avg_price": 45276.0,
-    "last_vacancy": 13,
-    "last_avg_price": 118716.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -73440.0
+    "last_vacancy": 12,
+    "last_avg_price": 45276.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-16": {
     "vacancy": 13,
     "avg_price": 35110.0,
-    "last_vacancy": 14,
-    "last_avg_price": 104030.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68920.0
+    "last_vacancy": 13,
+    "last_avg_price": 35110.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-17": {
     "vacancy": 12,
     "avg_price": 32879.0,
-    "last_vacancy": 13,
-    "last_avg_price": 107273.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74394.0
+    "last_vacancy": 12,
+    "last_avg_price": 32879.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-18": {
     "vacancy": 11,
     "avg_price": 32993.0,
-    "last_vacancy": 12,
-    "last_avg_price": 113577.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -80584.0
+    "last_vacancy": 11,
+    "last_avg_price": 32993.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-19": {
     "vacancy": 13,
     "avg_price": 33210.0,
-    "last_vacancy": 14,
-    "last_avg_price": 102267.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -69057.0
+    "last_vacancy": 13,
+    "last_avg_price": 33210.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-20": {
     "vacancy": 13,
     "avg_price": 33011.0,
-    "last_vacancy": 14,
-    "last_avg_price": 102082.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -69071.0
+    "last_vacancy": 13,
+    "last_avg_price": 33011.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-21": {
     "vacancy": 13,
-    "avg_price": 34579.0,
-    "last_vacancy": 14,
-    "last_avg_price": 103537.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68958.0
+    "avg_price": 34586.0,
+    "last_vacancy": 13,
+    "last_avg_price": 34579.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 7.0
   },
   "2027-05-22": {
     "vacancy": 13,
-    "avg_price": 42998.0,
-    "last_vacancy": 14,
-    "last_avg_price": 111355.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68357.0
+    "avg_price": 42983.0,
+    "last_vacancy": 13,
+    "last_avg_price": 42998.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -15.0
   },
   "2027-05-23": {
     "vacancy": 13,
-    "avg_price": 35209.0,
-    "last_vacancy": 14,
-    "last_avg_price": 104123.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68914.0
+    "avg_price": 35202.0,
+    "last_vacancy": 13,
+    "last_avg_price": 35209.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -7.0
   },
   "2027-05-24": {
     "vacancy": 12,
     "avg_price": 32847.0,
-    "last_vacancy": 13,
-    "last_avg_price": 107243.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74396.0
+    "last_vacancy": 12,
+    "last_avg_price": 32847.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-25": {
     "vacancy": 11,
     "avg_price": 33075.0,
-    "last_vacancy": 12,
-    "last_avg_price": 113652.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -80577.0
+    "last_vacancy": 11,
+    "last_avg_price": 33075.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-26": {
     "vacancy": 13,
     "avg_price": 33180.0,
-    "last_vacancy": 14,
-    "last_avg_price": 102239.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -69059.0
+    "last_vacancy": 13,
+    "last_avg_price": 33180.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-27": {
     "vacancy": 13,
     "avg_price": 33180.0,
-    "last_vacancy": 14,
-    "last_avg_price": 102239.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -69059.0
+    "last_vacancy": 13,
+    "last_avg_price": 33180.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-28": {
     "vacancy": 13,
     "avg_price": 34349.0,
-    "last_vacancy": 14,
-    "last_avg_price": 103324.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -68975.0
+    "last_vacancy": 13,
+    "last_avg_price": 34349.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-29": {
     "vacancy": 12,
-    "avg_price": 44983.0,
-    "last_vacancy": 13,
-    "last_avg_price": 118446.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -73463.0
+    "avg_price": 44933.0,
+    "last_vacancy": 12,
+    "last_avg_price": 44983.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": -50.0
   },
   "2027-05-30": {
     "vacancy": 12,
     "avg_price": 35159.0,
-    "last_vacancy": 13,
-    "last_avg_price": 109377.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74218.0
+    "last_vacancy": 12,
+    "last_avg_price": 35159.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-05-31": {
     "vacancy": 12,
     "avg_price": 33450.0,
-    "last_vacancy": 13,
-    "last_avg_price": 107800.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -74350.0
+    "last_vacancy": 12,
+    "last_avg_price": 33450.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-01": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-02": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-03": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-04": {
     "vacancy": 6,
     "avg_price": 39443.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176665.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137222.0
+    "last_vacancy": 6,
+    "last_avg_price": 39443.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-05": {
     "vacancy": 6,
     "avg_price": 45049.0,
-    "last_vacancy": 7,
-    "last_avg_price": 181471.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -136422.0
+    "last_vacancy": 6,
+    "last_avg_price": 45049.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-06": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-07": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-08": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-09": {
     "vacancy": 6,
     "avg_price": 37809.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175265.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137456.0
+    "last_vacancy": 6,
+    "last_avg_price": 37809.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-10": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-11": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-12": {
     "vacancy": 6,
     "avg_price": 45049.0,
-    "last_vacancy": 7,
-    "last_avg_price": 181471.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -136422.0
+    "last_vacancy": 6,
+    "last_avg_price": 45049.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-13": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-17": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-18": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-19": {
     "vacancy": 6,
     "avg_price": 45049.0,
-    "last_vacancy": 7,
-    "last_avg_price": 181471.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -136422.0
+    "last_vacancy": 6,
+    "last_avg_price": 45049.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-20": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-21": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-22": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-23": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-24": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-25": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-26": {
     "vacancy": 6,
     "avg_price": 45049.0,
-    "last_vacancy": 7,
-    "last_avg_price": 181471.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -136422.0
+    "last_vacancy": 6,
+    "last_avg_price": 45049.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-27": {
     "vacancy": 6,
     "avg_price": 39259.0,
-    "last_vacancy": 7,
-    "last_avg_price": 176508.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137249.0
+    "last_vacancy": 6,
+    "last_avg_price": 39259.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-28": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-29": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   },
   "2027-06-30": {
     "vacancy": 6,
     "avg_price": 37626.0,
-    "last_vacancy": 7,
-    "last_avg_price": 175108.0,
-    "vacancy_diff": -1,
-    "avg_price_diff": -137482.0
+    "last_vacancy": 6,
+    "last_avg_price": 37626.0,
+    "vacancy_diff": 0,
+    "avg_price_diff": 0.0
   }
 }
